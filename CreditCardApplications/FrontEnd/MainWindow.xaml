@@ -6,7 +6,55 @@
         xmlns:local="clr-namespace:FrontEnd"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="0,0,0,-6">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="GeneralBannerHeader">
+                <RowDefinition.MaxHeight>40</RowDefinition.MaxHeight>
+            </RowDefinition>
+            <RowDefinition x:Name="CardInfoBannerHeader">
+                <RowDefinition.MaxHeight>40</RowDefinition.MaxHeight>
+            </RowDefinition>
+            <RowDefinition x:Name="MainPageRow"/>
+            <RowDefinition x:Name="Footer">
+                <RowDefinition.MaxHeight>30</RowDefinition.MaxHeight>
+            </RowDefinition>
+        </Grid.RowDefinitions>
 
+        <Rectangle x:Name="CardInfoBanner" Grid.Row="1" Fill="DarkBlue"/>
+
+        <Grid x:Name="MainPage" Grid.Row="2"> <!--Main page: where the bulk of the form goes-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="CentreGrid" Grid.Column="1"> <!--The good stuff goes on in the screen's centre-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition>
+                    </ColumnDefinition>
+                    <ColumnDefinition>
+                        <ColumnDefinition.MaxWidth>100</ColumnDefinition.MaxWidth>
+                    </ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Rectangle x:Name="CardDisplayColumn" Grid.Column="1" Fill="LightGray"/>
+
+                <Grid x:Name="FormGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    
+                </Grid>
+            </Grid>
+            
+        </Grid>
     </Grid>
 </Window>
