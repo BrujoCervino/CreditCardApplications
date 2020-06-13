@@ -22,14 +22,16 @@
 
         <Rectangle x:Name="CardInfoBanner" Grid.Row="1" Fill="DarkBlue"/>
 
-        <Grid x:Name="MainPage" Grid.Row="2"> <!--Main page: where the bulk of the form goes-->
+        <Grid x:Name="MainPage" Grid.Row="2">
+            <!--Main page: where the bulk of the form goes-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid x:Name="CentreGrid" Grid.Column="1"> <!--The good stuff goes on in the screen's centre-->
+            <Grid x:Name="CentreGrid" Grid.Column="1">
+                <!--The good stuff goes on in the screen's centre-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition>
                     </ColumnDefinition>
@@ -51,10 +53,14 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    
+                    <TextBlock x:Name="ProvideDetailsText" Grid.Row="0" TextWrapping="Wrap" FontSize="10" 
+                               Text="Please provide your details and we will perform a credit check in 60 seconds"
+                    />
+                    <ComboBox x:Name="TitleComboBox" Margin="7,10,84,10" Grid.Row="1" SelectionChanged="TitleComboBox_SelectionChanged"/>
+
                 </Grid>
             </Grid>
-            
+
         </Grid>
     </Grid>
 </Window>

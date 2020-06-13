@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,13 @@ namespace FrontEnd
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private void TitleComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            InitializeComponent();
+            ComboBox comboBox = sender as ComboBox;
+            if (null != TitleComboBox)
+            {
+                applicationData.Title = (Titles)comboBox.SelectedIndex; 
+            }
         }
     }
 }
