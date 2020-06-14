@@ -123,9 +123,9 @@
                             <Run Text="Date of Birth"/>
                         </TextBlock>
                         
-                       <ComboBox x:Name="DayComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="TitleComboBox_SelectionChanged"/> 
-                       <ComboBox x:Name="MonthComboBox" Grid.Row="1" Grid.Column="1" SelectionChanged="TitleComboBox_SelectionChanged"/> 
-                       <ComboBox x:Name="YearComboBox" Grid.Row="1" Grid.Column="2" SelectionChanged="TitleComboBox_SelectionChanged"/> 
+                       <ComboBox x:Name="DayComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
+                        <ComboBox x:Name="MonthComboBox" Grid.Row="1" Grid.Column="1" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
+                        <ComboBox x:Name="YearComboBox" Grid.Row="1" Grid.Column="2" SelectionChanged="BirthdateComboBox_SelectionChanged"/> 
                     </Grid>
                 </Grid>
             </Grid>

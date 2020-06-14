@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows;
 
@@ -13,6 +14,22 @@ namespace FrontEnd
         Mrs,
         Miss,
         Ms
+    }
+
+    public enum Months
+    {
+        January = 1,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
     }
 
     // ToDo: Move this to another project within the solution
@@ -30,7 +47,7 @@ namespace FrontEnd
         // ~~ Contact Details ~~
         public string Email { get; set; }
         public int MobileNumber { get; set; }
-        public int HomePhoneNumber { get; set; } 
+        public int HomePhoneNumber { get; set; }
         public string HouseNumber { get; set; }
         public string PostalCode { get; set; }
 
@@ -43,7 +60,7 @@ namespace FrontEnd
     public partial class MainWindow : Window
     {
         public CreditCardApplicantData ApplicantData { get; set; } = new CreditCardApplicantData();
-        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -53,9 +70,36 @@ namespace FrontEnd
             {
                 TitleComboBox.Items.Add(title);
             }
-
             // TitleComboBox defaultly reads "Title"
             TitleComboBox.Text = TitleComboBox.Items[0].ToString();
+
+            // Populate the birthyear dropdown as either "YYYY" or between 1880 and the current year inclusive
+            int earliestApplicantBirthyear = 1880;
+            int range = 1 + Math.Abs(earliestApplicantBirthyear - DateTime.Now.Year);
+            YearComboBox.Items.Add("YYYY");
+            foreach (int yearToAdd in Enumerable.Range(earliestApplicantBirthyear, range))
+            {
+                YearComboBox.Items.Add(yearToAdd);
+            }
+            // YearComboBox defaultly reads "YYYY"
+            YearComboBox.Text = YearComboBox.Items[0].ToString();
+
+            // Populate the birthmonth dropdown as either "MM" or between 01 and 12 inclusive
+            MonthComboBox.Items.Add("MM");
+#warning Iterative string used. Replace "MonthString" with a StringBuilder. 
+            string monthString = "";
+            for(int i = 1; i <= (int)Months.December; ++i)
+            {
+                monthString = "";
+                if (i < 10)
+                {
+                    monthString += '0';
+                }
+                monthString += i.ToString();
+                MonthComboBox.Items.Add(monthString);
+            }
+            // MonthComboBox defaultly reads "MM"
+            MonthComboBox.Text = MonthComboBox.Items[0].ToString();
         }
     }
 }

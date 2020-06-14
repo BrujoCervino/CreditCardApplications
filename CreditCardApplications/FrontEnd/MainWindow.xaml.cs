@@ -31,5 +31,20 @@ namespace FrontEnd
                 ApplicantData.Title = (Titles)comboBox.SelectedIndex; 
             }
         }
+
+        private void BirthdateComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Store the sender as a combo box, by which the user sets their title.
+            ComboBox comboBox = sender as ComboBox;
+
+            if (null != comboBox)
+            {
+                var a = comboBox.Tag;
+                switch (a)
+                {
+
+                }
+            }
+        }
     }
 }
