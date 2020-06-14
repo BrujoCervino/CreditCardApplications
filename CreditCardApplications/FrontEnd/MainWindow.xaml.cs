@@ -50,5 +50,15 @@ namespace FrontEnd
                 }
             }
         }
+
+        private void EmailEntry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            if(null != textBox)
+            {
+                ApplicantData.Email = textBox.Text;
+            }
+        }
     }
 }

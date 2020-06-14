@@ -77,15 +77,23 @@
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="Title"/>
                         </TextBlock>
-                        <ComboBox x:Name="TitleComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="TitleComboBox_SelectionChanged"/>
-                        <TextBlock x:Name="TitleText1" Grid.Row="0" Grid.Column="1">
+                        <ComboBox x:Name="TitleComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="TitleComboBox_SelectionChanged">
+                        </ComboBox>
+                        <TextBlock x:Name="FirstNameText" Grid.Row="0" Grid.Column="1">
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="First Name"/>
                         </TextBlock>
-                        <TextBox  Grid.Row="1" Grid.Column="1"></TextBox>
+                        <TextBox  Grid.Row="1" Grid.Column="1">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
                     </Grid>
 
-                    <Grid Grid.Row="3"> <!--Middle Name and Surname Grid-->
+                    <Grid Grid.Row="3">
+                        <!--Middle Name and Surname Grid-->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition x:Name="MiddleNameTextSection"></ColumnDefinition>
                             <ColumnDefinition x:Name="MiddleNameTextEntrySection"></ColumnDefinition>
@@ -96,13 +104,25 @@
                             <RowDefinition x:Name="SurnameTextEntrySection"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="MiddleNameText" Grid.Row="0" Grid.Column="0" FontSize="7" Text="Middle Name (optional)"/>
-                        <TextBox x:Name="MiddleNameTextEntry" Grid.Row="1" Grid.Column="0"/>
+                        <TextBox x:Name="MiddleNameTextEntry" Grid.Row="1" Grid.Column="0">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
 
                         <TextBlock x:Name="SurnameText" Grid.Row="0" Grid.Column="1">
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="Surname"/>
                         </TextBlock>
-                        <TextBox x:Name="SurnameTextEntry" Grid.Row="1" Grid.Column="1"/>
+                        <TextBox x:Name="SurnameTextEntry" Grid.Row="1" Grid.Column="1">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
                     </Grid>
 
                     <Grid Grid.Row="4">
@@ -122,13 +142,15 @@
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="Date of Birth"/>
                         </TextBlock>
-                        
-                       <ComboBox x:Name="DayComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
+
+                        <ComboBox x:Name="DayComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
                         <ComboBox x:Name="MonthComboBox" Grid.Row="1" Grid.Column="1" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
-                        <ComboBox x:Name="YearComboBox" Grid.Row="1" Grid.Column="2" SelectionChanged="BirthdateComboBox_SelectionChanged"/> 
+                        <ComboBox x:Name="YearComboBox" Grid.Row="1" Grid.Column="2" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
                     </Grid>
 
-                    <Grid Grid.Row="5"> 
+                    <Separator Grid.Row="5"/>
+
+                    <Grid Grid.Row="6">
                         <!--Email Grid-->
                         <Grid.RowDefinitions>
                             <RowDefinition x:Name="EmailTitleRow"></RowDefinition>
@@ -139,10 +161,18 @@
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="Email Address"/>
                         </TextBlock>
-                        <TextBox x:Name="EmailEntry" Grid.Row="1"></TextBox>
+
+                        <TextBox x:Name="EmailEntry" Grid.Row="1" AcceptsReturn="False" TextChanged="EmailEntry_TextChanged">
+                            <TextBox.Resources>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="CornerRadius" Value="3"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
                     </Grid>
-                    
-                    
+
+
+
                 </Grid>
             </Grid>
         </Grid>

@@ -59,7 +59,7 @@ namespace FrontEnd
 
     public partial class MainWindow : Window
     {
-        public CreditCardApplicantData ApplicantData { get; set; } = new CreditCardApplicantData();
+        public readonly CreditCardApplicantData ApplicantData = new CreditCardApplicantData();
 
         public MainWindow()
         {
