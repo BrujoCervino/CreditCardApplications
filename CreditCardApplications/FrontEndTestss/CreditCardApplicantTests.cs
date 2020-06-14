@@ -32,5 +32,24 @@ namespace FrontEnd // uses this namespace to access members internal to it (UI e
                 titlesList.Contains(currentApplicantTitle)
             );
         }
+
+        [Test(Author = "K McEvaddy")]
+        public void ApplicantBirthDayIsInCorrectRange()
+        {
+            // Remember to display the correct amount of days, according to the month
+            throw new NotImplementedException(); 
+        }
+
+        [Test(Author = "K McEvaddy")]
+        public void ApplicantBirthMonthIsInCorrectRange()
+        {
+            throw new NotImplementedException();
+        }
+
+        [Test(Author = "K McEvaddy")]
+        public void ApplicantBirthYearIsInCorrectRange()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
