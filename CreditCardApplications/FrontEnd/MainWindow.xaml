@@ -171,7 +171,13 @@
                         </TextBox>
                     </Grid>
 
-
+                    <Button Grid.Row="7" Content="Save &amp; Continue" Click="SaveAndContinueButton_Click"> <!--Save and Continue Button-->
+                        <Button.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="3"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
 
                 </Grid>
             </Grid>

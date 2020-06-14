@@ -60,5 +60,10 @@ namespace FrontEnd
                 ApplicantData.Email = textBox.Text;
             }
         }
+
+        private void SaveAndContinueButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Connect to database
+        }
     }
 }
