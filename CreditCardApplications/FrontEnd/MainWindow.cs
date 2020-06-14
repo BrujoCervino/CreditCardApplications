@@ -13,11 +13,12 @@ namespace FrontEnd
         Mrs,
         Miss,
         Ms
-    } 
-    
+    }
+
     // ToDo: Move this to another project within the solution
-    // Contains data for an application: income, etc.
-    internal class CreditCardApplicationData
+    // Contains data for an applicant: income, etc.
+#warning CreditCardApplicantData must to be moved into another layer of the program.
+    public class CreditCardApplicantData
     {
         // ~~ Personal Details ~~
         public Titles Title { get; set; }
@@ -41,7 +42,7 @@ namespace FrontEnd
 
     public partial class MainWindow : Window
     {
-        CreditCardApplicationData applicationData { get; set; } = new CreditCardApplicationData();
+        public CreditCardApplicantData ApplicantData { get; set; } = new CreditCardApplicantData();
         
         public MainWindow()
         {

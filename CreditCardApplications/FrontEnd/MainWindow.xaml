@@ -14,15 +14,18 @@
             <RowDefinition x:Name="CardInfoBannerHeader">
                 <RowDefinition.MaxHeight>40</RowDefinition.MaxHeight>
             </RowDefinition>
+            <RowDefinition x:Name="ApplicationStageHeader">
+                <RowDefinition.MaxHeight>40</RowDefinition.MaxHeight>
+            </RowDefinition>
             <RowDefinition x:Name="MainPageRow"/>
             <RowDefinition x:Name="Footer">
                 <RowDefinition.MaxHeight>30</RowDefinition.MaxHeight>
             </RowDefinition>
         </Grid.RowDefinitions>
 
-        <Rectangle x:Name="CardInfoBanner" Grid.Row="1" Fill="DarkBlue"/>
+        <Rectangle x:Name="CardInfoBanner" Grid.Row="1" Fill="#002263"/>
 
-        <Grid x:Name="MainPage" Grid.Row="2">
+        <Grid x:Name="MainPage" Grid.Row="3">
             <!--Main page: where the bulk of the form goes-->
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -30,7 +33,7 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid x:Name="CentreGrid" Grid.Column="1">
+            <Grid x:Name="CentreGrid" Grid.ColumnSpan="3" Margin="240,0,240,0">
                 <!--The good stuff goes on in the screen's centre-->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition>
@@ -44,7 +47,7 @@
 
                 <Grid x:Name="FormGrid">
                     <Grid.RowDefinitions>
-                        <RowDefinition/>
+                        <RowDefinition x:Name="ProvideDetailsRow"/>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -53,14 +56,79 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
+
                     <TextBlock x:Name="ProvideDetailsText" Grid.Row="0" TextWrapping="Wrap" FontSize="10" 
                                Text="Please provide your details and we will perform a credit check in 60 seconds"
                     />
-                    <ComboBox x:Name="TitleComboBox" Margin="7,10,84,10" Grid.Row="1" SelectionChanged="TitleComboBox_SelectionChanged"/>
+                    <Separator x:Name="PersonalDetailsSeparator" Grid.Row="1" Margin="0,14,0,31" Grid.RowSpan="2"/>
 
+                    <Grid Grid.Row="2">
+                        <!--Title and FirstName Grid-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="TitleTextSection"></ColumnDefinition>
+                            <ColumnDefinition x:Name="TitleDropDownSection"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="FirstNameTextSection"></RowDefinition>
+                            <RowDefinition x:Name="FirstNameTextEntrySection"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="TitleText" Grid.Row="0" Grid.Column="0">
+                            <Run Foreground="Red" Text="*"/>
+                            <Run Text="Title"/>
+                        </TextBlock>
+                        <ComboBox x:Name="TitleComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="TitleComboBox_SelectionChanged"/>
+                        <TextBlock x:Name="TitleText1" Grid.Row="0" Grid.Column="1">
+                            <Run Foreground="Red" Text="*"/>
+                            <Run Text="First Name"/>
+                        </TextBlock>
+                        <TextBox  Grid.Row="1" Grid.Column="1"></TextBox>
+                    </Grid>
+
+                    <Grid Grid.Row="3"> <!--Middle Name and Surname Grid-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="MiddleNameTextSection"></ColumnDefinition>
+                            <ColumnDefinition x:Name="MiddleNameTextEntrySection"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="SurnameTextSection"></RowDefinition>
+                            <RowDefinition x:Name="SurnameTextEntrySection"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="MiddleNameText" Grid.Row="0" Grid.Column="0" FontSize="7" Text="Middle Name (optional)"/>
+                        <TextBox x:Name="MiddleNameTextEntry" Grid.Row="1" Grid.Column="0"/>
+
+                        <TextBlock x:Name="SurnameText" Grid.Row="0" Grid.Column="1">
+                            <Run Foreground="Red" Text="*"/>
+                            <Run Text="Surname"/>
+                        </TextBlock>
+                        <TextBox x:Name="SurnameTextEntry" Grid.Row="1" Grid.Column="1"/>
+                    </Grid>
+
+                    <Grid Grid.Row="4">
+                        <!--Birthdate Grid-->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="Day"></ColumnDefinition>
+                            <ColumnDefinition x:Name="Month"></ColumnDefinition>
+                            <ColumnDefinition x:Name="Year"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="BirthdateTextRow"></RowDefinition>
+                            <RowDefinition x:Name="BirthdateEntryRow"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Name="BirthdateText" Grid.Row="0" FontSize="10" Grid.Column="0" >
+                            <Run Foreground="Red" Text="*"/>
+                            <Run Text="Date of Birth"/>
+                        </TextBlock>
+                        
+                       <ComboBox x:Name="DayComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="TitleComboBox_SelectionChanged"/> 
+                       <ComboBox x:Name="MonthComboBox" Grid.Row="1" Grid.Column="1" SelectionChanged="TitleComboBox_SelectionChanged"/> 
+                       <ComboBox x:Name="YearComboBox" Grid.Row="1" Grid.Column="2" SelectionChanged="TitleComboBox_SelectionChanged"/> 
+                    </Grid>
                 </Grid>
             </Grid>
-
         </Grid>
     </Grid>
 </Window>

@@ -23,10 +23,12 @@ namespace FrontEnd
     {
         private void TitleComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Store the sender as a combo box, by which the user sets their title.
             ComboBox comboBox = sender as ComboBox;
+
             if (null != TitleComboBox)
             {
-                applicationData.Title = (Titles)comboBox.SelectedIndex; 
+                ApplicantData.Title = (Titles)comboBox.SelectedIndex; 
             }
         }
     }
