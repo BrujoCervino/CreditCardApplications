@@ -86,19 +86,38 @@ namespace FrontEnd
 
             // Populate the birthmonth dropdown as either "MM" or between 01 and 12 inclusive
             MonthComboBox.Items.Add("MM");
-            StringBuilder monthString = new StringBuilder();
+            StringBuilder stringBuilder = new StringBuilder();
             for(int i = 1; i <= (int)Months.December; ++i)
             {
-                monthString.Clear();
+                stringBuilder.Clear();
                 if (i < 10)
                 {
-                    monthString.Append('0');
+                    stringBuilder.Append('0');
                 }
-                monthString.Append(i.ToString());
-                MonthComboBox.Items.Add(monthString.ToString());
+                stringBuilder.Append(i.ToString());
+                MonthComboBox.Items.Add(stringBuilder.ToString());
             }
-            // MonthComboBox defaultly reads "MM"
-            MonthComboBox.Text = MonthComboBox.Items[0].ToString();
+           // MonthComboBox defaultly reads "MM"
+           MonthComboBox.Text = MonthComboBox.Items[0].ToString();
+
+
+
+
+            // Populate the birthday dropdown as either "DD" or between 01 and 31 inclusive
+            DayComboBox.Items.Add("DD");
+            for (int i = 1; i <= 31; ++i)
+            {
+                stringBuilder.Clear();
+                if (i < 10)
+                {
+                    stringBuilder.Append('0');
+                }
+                stringBuilder.Append(i.ToString());
+                DayComboBox.Items.Add(stringBuilder.ToString());
+            }
+
+            // MonthComboBox defaultly reads "DD"
+            DayComboBox.Text = DayComboBox.Items[0].ToString();
         }
     }
 }

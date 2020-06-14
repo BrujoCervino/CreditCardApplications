@@ -127,6 +127,22 @@
                         <ComboBox x:Name="MonthComboBox" Grid.Row="1" Grid.Column="1" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
                         <ComboBox x:Name="YearComboBox" Grid.Row="1" Grid.Column="2" SelectionChanged="BirthdateComboBox_SelectionChanged"/> 
                     </Grid>
+
+                    <Grid Grid.Row="5"> 
+                        <!--Email Grid-->
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="EmailTitleRow"></RowDefinition>
+                            <RowDefinition x:Name="EmailEntryRow"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock x:Name="EmailText" Grid.Row="0">
+                            <Run Foreground="Red" Text="*"/>
+                            <Run Text="Email Address"/>
+                        </TextBlock>
+                        <TextBox x:Name="EmailEntry" Grid.Row="1"></TextBox>
+                    </Grid>
+                    
+                    
                 </Grid>
             </Grid>
         </Grid>

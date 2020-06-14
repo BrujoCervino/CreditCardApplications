@@ -42,7 +42,11 @@ namespace FrontEnd
                 var a = comboBox.Tag;
                 switch (a)
                 {
-
+                    case "MonthChanged":
+                        MonthComboBox.Items.Remove("29");
+                        MonthComboBox.Items.Remove("30");
+                        MonthComboBox.Items.Remove("31");
+                        break;
                 }
             }
         }
