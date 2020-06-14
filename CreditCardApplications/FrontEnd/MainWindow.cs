@@ -86,17 +86,16 @@ namespace FrontEnd
 
             // Populate the birthmonth dropdown as either "MM" or between 01 and 12 inclusive
             MonthComboBox.Items.Add("MM");
-#warning Iterative string used. Replace "MonthString" with a StringBuilder. 
-            string monthString = "";
+            StringBuilder monthString = new StringBuilder();
             for(int i = 1; i <= (int)Months.December; ++i)
             {
-                monthString = "";
+                monthString.Clear();
                 if (i < 10)
                 {
-                    monthString += '0';
+                    monthString.Append('0');
                 }
-                monthString += i.ToString();
-                MonthComboBox.Items.Add(monthString);
+                monthString.Append(i.ToString());
+                MonthComboBox.Items.Add(monthString.ToString());
             }
             // MonthComboBox defaultly reads "MM"
             MonthComboBox.Text = MonthComboBox.Items[0].ToString();
