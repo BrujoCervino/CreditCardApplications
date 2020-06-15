@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CardLib;
+using CreditCardApplicantData.Enums;
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -28,7 +30,7 @@ namespace FrontEnd
 
             if (null != TitleComboBox)
             {
-                ApplicantData.Title = (Titles)comboBox.SelectedIndex; 
+
             }
         }
 
@@ -55,15 +57,47 @@ namespace FrontEnd
         {
             TextBox textBox = sender as TextBox;
 
-            if(null != textBox)
+            if (null != textBox)
             {
-                ApplicantData.Email = textBox.Text;
+
             }
+        }
+
+        private DateTime ParseBirthdate(string month, string day, string year)
+        {
+#warning firstDayOrMonth is used in many places and should be a constant.
+            const string firstDayOrMonth = "01";
+#warning firstYear is used in many places and should be a constant.
+            const string firstYear = "1880";
+            // Format day, month and year:
+            //  If null or default, let them equal their earliest possible value.
+            //  ToDo: make the above a function and implement it here
+            month = ((month != "MM") ? month : firstDayOrMonth)??firstDayOrMonth;
+            day = ((day != "DD") ? day : firstDayOrMonth)??firstDayOrMonth;
+            year = ((year != "YYYY") ? year : firstDayOrMonth)?? firstYear;
+
+            // Parse the birthdate
+            string stringifiedBirthdate = $"{month}/{day}/{year}";
+            return DateTime.Parse(stringifiedBirthdate);
         }
 
         private void SaveAndContinueButton_Click(object sender, RoutedEventArgs e)
         {
-            // Connect to database
+#warning Crud update unfinished
+
+            DateTime applicantBirthDate
+                = ParseBirthdate(MonthComboBox.Text, DayComboBox.Text, YearComboBox.Text);
+
+
+
+            // CrudManager.Update
+            // (
+            //     (Titles)TitleComboBox.SelectedIndex,
+            //     FirstNameTextEntry.Text,
+            //     MiddleNameTextEntry.Text,
+            //     applicantBirthDate,
+            //
+            // );
         }
     }
 }

@@ -8,4 +8,8 @@
     <None Remove="desktop.ini" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CreditCardApplicantData\CreditCardApplicantData.csproj" />
+  </ItemGroup>
+
 </Project>

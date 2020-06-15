@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{9EEE
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontEndTests", "FrontEndTests\FrontEndTests.csproj", "{8364E17E-6878-411D-B0DE-324901C57718}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B06B099C-B51E-4ED6-B238-A87E2A989215}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardApplicantData", "CreditCardApplicantData\CreditCardApplicantData.csproj", "{EEE9E1E2-CC42-4A59-A400-89D3DFAE49BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,12 +39,17 @@ Global
 		{8364E17E-6878-411D-B0DE-324901C57718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8364E17E-6878-411D-B0DE-324901C57718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8364E17E-6878-411D-B0DE-324901C57718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE9E1E2-CC42-4A59-A400-89D3DFAE49BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE9E1E2-CC42-4A59-A400-89D3DFAE49BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE9E1E2-CC42-4A59-A400-89D3DFAE49BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE9E1E2-CC42-4A59-A400-89D3DFAE49BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8364E17E-6878-411D-B0DE-324901C57718} = {9EEECBA0-533B-4CFF-8FE0-2B0D50C4AE1F}
+		{EEE9E1E2-CC42-4A59-A400-89D3DFAE49BD} = {B06B099C-B51E-4ED6-B238-A87E2A989215}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31111AAA-7A65-49C1-940C-741214DF3C23}

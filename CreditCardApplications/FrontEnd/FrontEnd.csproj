@@ -10,4 +10,9 @@
     <None Remove="desktop.ini" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CardLib\CrudManager.csproj" />
+    <ProjectReference Include="..\CreditCardApplicantData\CreditCardApplicantData.csproj" />
+  </ItemGroup>
+
 </Project>

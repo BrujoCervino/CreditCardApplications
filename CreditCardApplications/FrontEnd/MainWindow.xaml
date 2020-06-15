@@ -83,7 +83,7 @@
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="First Name"/>
                         </TextBlock>
-                        <TextBox  Grid.Row="1" Grid.Column="1">
+                        <TextBox x:Name="FirstNameTextEntry"  Grid.Row="1" Grid.Column="1">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="3"/>
