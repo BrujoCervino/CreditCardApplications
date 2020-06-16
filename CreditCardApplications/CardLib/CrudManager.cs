@@ -46,6 +46,12 @@ namespace CardLib
         // In terms of card application, erase an entry due to a fraudulent application
         public static void DeleteEntry() { }
 
+        // 
+        public static void DeleteAllEntries()
+        {
+
+        }
+
     }
 
 }

@@ -17,7 +17,7 @@ namespace FrontEnd
         public const string DaysTitle = "DD";
 
         public readonly int HighestFutureproofAge = 120;
-        const string firstDayOrMonth = "01";
+        public const string FirstDayOrMonth = "01";
 
         public MainWindow()
         {
@@ -111,9 +111,9 @@ namespace FrontEnd
             // Format day, month and year:
             //  If null or default, let them equal their earliest possible value.
             //  ToDo: make the above a function and implement it here
-            month = ((month != MonthsTitle) ? month : firstDayOrMonth) ?? firstDayOrMonth;
-            day   = ((day != DaysTitle)     ? day   : firstDayOrMonth) ?? firstDayOrMonth;
-            year  = ((year != YearsTitle)   ? year  : firstDayOrMonth) ?? firstYear;
+            month = ((month != MonthsTitle) ? month : FirstDayOrMonth) ?? FirstDayOrMonth;
+            day   = ((day != DaysTitle)     ? day   : FirstDayOrMonth) ?? FirstDayOrMonth;
+            year  = ((year != YearsTitle)   ? year  : FirstDayOrMonth) ?? firstYear;
 
             // Parse the birthdate
             string stringifiedBirthdate = $"{month}/{day}/{year}";
