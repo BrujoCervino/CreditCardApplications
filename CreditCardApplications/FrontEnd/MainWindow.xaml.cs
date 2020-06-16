@@ -64,32 +64,15 @@ namespace FrontEnd
             }
         }
 
-        private DateTime ParseBirthdate(string month, string day, string year)
-        {
-#warning firstDayOrMonth is used in many places and should be a constant.
-            const string firstDayOrMonth = "01";
-#warning firstYear is used in many places and should be a constant.
-            const string firstYear = "1880";
-            // Format day, month and year:
-            //  If null or default, let them equal their earliest possible value.
-            //  ToDo: make the above a function and implement it here
-            month = ((month != "MM") ? month : firstDayOrMonth)??firstDayOrMonth;
-            day = ((day != "DD") ? day : firstDayOrMonth)??firstDayOrMonth;
-            year = ((year != "YYYY") ? year : firstDayOrMonth)?? firstYear;
-
-            // Parse the birthdate
-            string stringifiedBirthdate = $"{month}/{day}/{year}";
-            return DateTime.Parse(stringifiedBirthdate);
-        }
-
         private void SaveAndContinueButton_Click(object sender, RoutedEventArgs e)
         {
-
+            // Parse the birthdate and title
             DateTime applicantBirthDate
-                = ParseBirthdate(MonthComboBox.Text, DayComboBox.Text, YearComboBox.Text);
+                = ParseAndFormatBirthdate(MonthComboBox.Text, DayComboBox.Text, YearComboBox.Text);
 
             Titles title = (Titles)TitleComboBox.SelectedIndex;
 
+            // 
             CrudManager.CreateEntry(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
         }
     }

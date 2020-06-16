@@ -11,26 +11,33 @@ namespace FrontEnd
 {
     public partial class MainWindow : Window
     {
+        // Birthdate ComboBox titles
+        public const string YearsTitle = "YYYY";
+        public const string MonthsTitle = "MM";
+        public const string DaysTitle = "DD";
+
+        public readonly int HighestFutureproofAge = 120;
+        const string firstDayOrMonth = "01";
+
         public MainWindow()
         {
             InitializeComponent();
 
+            // Initialise the title combo box
             var titles = Enum.GetNames(typeof(Titles)).ToImmutableArray<object>();
             InitComboBox(TitleComboBox, null, titles);
 
-            // Populate the birthyear dropdown as either "YYYY" or between 1880 and the current year inclusive
-            int earliestApplicantBirthyear = 1880;
-            int range = 1 + Math.Abs(earliestApplicantBirthyear - DateTime.Now.Year);
-            YearComboBox.Items.Add("YYYY");
-            foreach (int yearToAdd in Enumerable.Range(earliestApplicantBirthyear, range))
+            // Populate the birthyear dropdown as either "YYYY" 
+            //  or between (this year and HighestFutureproofAge years ago) inclusive
+            object[] years = new object[HighestFutureproofAge];
+            for(int i = 0; i < HighestFutureproofAge; ++i)
             {
-                YearComboBox.Items.Add(yearToAdd);
+                years[i] = DateTime.Now.Year - i;
             }
-            // YearComboBox defaultly reads "YYYY"
-            YearComboBox.Text = YearComboBox.Items[0].ToString();
+            InitComboBox(YearComboBox, YearsTitle, years.ToImmutableArray());
 
             // Populate the birthmonth dropdown as either "MM" or between 01 and 12 inclusive
-            MonthComboBox.Items.Add("MM");
+            MonthComboBox.Items.Add(MonthsTitle);
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 1; i <= (int)Months.December; ++i)
             {
@@ -43,7 +50,7 @@ namespace FrontEnd
                 MonthComboBox.Items.Add(stringBuilder.ToString());
             }
             // MonthComboBox defaultly reads "MM"
-            MonthComboBox.Text = MonthComboBox.Items[0].ToString();
+            SetDefaultInComboBox(MonthComboBox);
 
             // Populate the birthday dropdown as either "DD" or between 01 and 31 inclusive
             DayComboBox.Items.Add("DD");
@@ -57,13 +64,12 @@ namespace FrontEnd
                 stringBuilder.Append(i.ToString());
                 DayComboBox.Items.Add(stringBuilder.ToString());
             }
-
             // MonthComboBox defaultly reads "DD"
-            DayComboBox.Text = DayComboBox.Items[0].ToString();
+            SetDefaultInComboBox(DayComboBox);
         }
 
         // Populates ComboBox cb with firstToAdd (e.g. "MM" before a list of months) then with objectsToAdd.
-        public void PopulateComboBox(in ComboBox cb, in object firstToAdd, in ImmutableArray<object> objectsToAdd)
+        private void PopulateComboBox(in ComboBox cb, in object firstToAdd, in ImmutableArray<object> objectsToAdd)
         {
             if(null != cb)
             {
@@ -71,7 +77,7 @@ namespace FrontEnd
                 {
                     cb.Items.Add(firstToAdd);
                 }
-                if(null != objectsToAdd)
+                if(null != objectsToAdd && objectsToAdd.Length > 0)
                 {
                     foreach (object obj in objectsToAdd)
                     {
@@ -82,9 +88,9 @@ namespace FrontEnd
         }
 
         // Sets a ComboBox's text to its items' first element, stringified. 
-        public void SetDefaultInComboBox(in ComboBox cb)
+        private void SetDefaultInComboBox(in ComboBox cb)
         {
-            if (null != cb && null != cb.Items)
+            if (null != cb && null != cb.Items && cb.Items.Count > 0)
             {
                 cb.Text = cb.Items[0].ToString();
             }
@@ -92,10 +98,26 @@ namespace FrontEnd
 
         // Sets up a combo box: populates its items and sets the default text/input as the first item in the list.
         // Example: populate the months ComboBox and set its default as "MM".
-        public void InitComboBox(in ComboBox cb, in object firstToAdd, in ImmutableArray<object> objectsToAdd)
+        protected void InitComboBox(in ComboBox cb, in object firstToAdd, in ImmutableArray<object> objectsToAdd)
         {
             PopulateComboBox(cb, firstToAdd, objectsToAdd);
             SetDefaultInComboBox(cb);
+        }
+
+        // Parses the given birthyear, replacing any nulls or defaults with the earliest valid element in its list
+        private DateTime ParseAndFormatBirthdate(string month, string day, string year)
+        {
+            string firstYear = (DateTime.Now.Year - HighestFutureproofAge).ToString();
+            // Format day, month and year:
+            //  If null or default, let them equal their earliest possible value.
+            //  ToDo: make the above a function and implement it here
+            month = ((month != MonthsTitle) ? month : firstDayOrMonth) ?? firstDayOrMonth;
+            day = ((day != DaysTitle) ? day : firstDayOrMonth) ?? firstDayOrMonth;
+            year = ((year != YearsTitle) ? year : firstDayOrMonth) ?? firstYear;
+
+            // Parse the birthdate
+            string stringifiedBirthdate = $"{month}/{day}/{year}";
+            return DateTime.Parse(stringifiedBirthdate);
         }
     }
 }

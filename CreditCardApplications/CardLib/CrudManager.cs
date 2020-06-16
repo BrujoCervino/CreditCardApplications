@@ -1,6 +1,8 @@
 ﻿using Globals.Enums;
 using DatabaseBackEnd;
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace CardLib
 {
@@ -13,27 +15,29 @@ namespace CardLib
         public static void CreateEntry(in Titles title, in string firstName, in string middleName, in string surname, 
             in DateTime birthDate, in string email, in string mobileNum, in string homeTelephoneNum, 
             in decimal annualPersonalIncome, in decimal OtherHouseholdIncome) 
-        { 
-            using(var db = new CreditCardApplicationContext())
+        {
+            using var db = new CreditCardApplicationContext();
+            db.Add(new Applicant
             {
-                db.Add(new Applicant 
-                {
-                    ApplicantId = 0,
-                    TitleId = (int)title,
-                    FirstName= firstName, 
-                    Surame = surname,
-                    BirthDate = birthDate,
-                    Email = email,
-                    MobileNum = mobileNum,
-                    HomeTelephoneNum = homeTelephoneNum,
-                    AnnualPersonalIncome = annualPersonalIncome,
-                    OtherHouseholdIncome = OtherHouseholdIncome
-                });
-                db.SaveChanges();
-            }
+                ApplicantId = 0,
+                TitleId = (int)title,
+                FirstName = firstName,
+                Surame = surname,
+                BirthDate = birthDate,
+                Email = email,
+                MobileNum = mobileNum,
+                HomeTelephoneNum = homeTelephoneNum,
+                AnnualPersonalIncome = annualPersonalIncome,
+                OtherHouseholdIncome = OtherHouseholdIncome
+            });
+            db.SaveChanges();
         }
 
-        public static void RetrieveAll() { }
+        public static List<Applicant> RetrieveAll() 
+        {
+            using var db = new CreditCardApplicationContext();
+            return db.Applicants.ToList<Applicant>();
+        }
 
         // In terms of card application, 
         //edit an entry due to incorrect data (incorrect income entered etc.)
@@ -41,12 +45,6 @@ namespace CardLib
         // In terms of card application, erase an entry due to a fraudulent application
         public static void DeleteEntry() { }
 
-        public static void Update(Titles title, string firstName, string middleName,
-            string surname, DateTime birthDate, string email, int mobileNumber, int homePhoneNumber,
-            string houseNumber, string postalCode,  decimal annualPersonalIncome, decimal otherHouseholdIncome)
-        {
-            
-        }
     }
 
 }
