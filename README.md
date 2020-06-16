@@ -16,7 +16,7 @@
 💳 **[Project Goal](https://github.com/users/BrujoCervino/projects/1#card-40161516)**:
 A GUI application in which the user can apply for a new credit card like [applying for an Amex credit card](https://www.americanexpress.com/en-gb/credit-cards/apply/personal/gold-credit?intlink=uk-amex-cardshop-details-apply-GoldCreditCard-top).
 
-<img src="RealWorldExamples/AmericanExpress/Amex_Page1_GoldCard.png" alt="Amex Application Image"/>
+<img src="RealWorldExamples/AmericanExpress/Amex_Page1_GoldCard.png" alt="Amex Application Image" width="250"/>
 
 💳 **[Project Definition of Done](https://github.com/users/BrujoCervino/projects/1#card-40161516)**:
 <br/>(See link above)
@@ -39,12 +39,12 @@ I can receive my credit card
 
 |Sprint|Timeframe|Done?|Screenshot start|Screenshot end
 |------|-----------------------------|---|--|--|
-|0 (Meta-sprint)    |Weekend         |✅|*[Unnecessary]*|<img src="SprintScreenshots/Sprint0_board.png" alt="Sprint 0 picture" width="250"/>|
-|1     |Monday - Early Tuesday       |⬜️|<img src="SprintScreenshots/Sprint1_Board_Beginning.png" alt="Sprint 1 Beginning" width="250"/>|<img src="SprintScreenshots/Sprint1_Board_End.png" alt="Sprint 1 End" width="250"/>|
-|2     |Late Tuesday - Early Thursday|⬜️|<img src="SprintScreenshots/Sprint2_Board_Beginning.png" alt="Sprint 2 Beginning" width="250"/>|<img src="SprintScreenshots/Sprint2_Board_End.png" alt="Sprint 2 End" width="250"/>|
-|3     |Late Thursday - Early Friday |⬜️|<img src="SprintScreenshots/Sprint3_Board_Beginning.png" alt="Sprint 3 Beginning" width="250"/>|<img src="SprintScreenshots/Sprint3_Board_End.png" alt="Sprint 3 End" width="250"/>|
-|4     |Late Friday                  |⬜️|<img src="SprintScreenshots/Sprint4_Board_Beginning.png" alt="Sprint 4 Beginning" width="250"/>|<img src="SprintScreenshots/Sprint4_Board_End.png" alt="Sprint 4 End" width="250"/>|
-|5     |Weekend                      |⬜️|<img src="SprintScreenshots/Sprint5_Board_Beginning.png" alt="Sprint 5 Beginning" width="250"/>|<img src="SprintScreenshots/Sprint5_Board_End.png" alt="Sprint 5 End" width="250"/>|
+|0 (Meta-sprint)    |Weekend         |✅|*[Unnecessary]*|<img src="SprintScreenshots/Sprint0_Board.png" alt="Sprint 0 picture" width="250"/>|
+|1     |Monday - Early Tuesday       |⬜️|<img src="SprintScreenshots/Sprint1_Board_Start.png" alt="Sprint 1 Start" width="250"/>|<img src="SprintScreenshots/Sprint1_Board_End.png" alt="Sprint 1 End" width="250"/>|
+|2     |Late Tuesday - Early Thursday|⬜️|<img src="SprintScreenshots/Sprint2_Board_Start.png" alt="Sprint 2 Start" width="250"/>|<img src="SprintScreenshots/Sprint2_Board_End.png" alt="Sprint 2 End" width="250"/>|
+|3     |Late Thursday - Early Friday |⬜️|<img src="SprintScreenshots/Sprint3_Board_Start.png" alt="Sprint 3 Start" width="250"/>|<img src="SprintScreenshots/Sprint3_Board_End.png" alt="Sprint 3 End" width="250"/>|
+|4     |Late Friday                  |⬜️|<img src="SprintScreenshots/Sprint4_Board_Start.png" alt="Sprint 4 Start" width="250"/>|<img src="SprintScreenshots/Sprint4_Board_End.png" alt="Sprint 4 End" width="250"/>|
+|5     |Weekend                      |⬜️|<img src="SprintScreenshots/Sprint5_Board_Start.png" alt="Sprint 5 Start" width="250"/>|<img src="SprintScreenshots/Sprint5_Board_End.png" alt="Sprint 5 End" width="250"/>|
 
 
 💳 **Project Retrospective**
@@ -68,5 +68,5 @@ I can receive my credit card
 
 ### Class Diagrams
 
-Find class diagrams within [the class diagrams folder](https://www.broken.com).
+Find class diagrams within [the class diagrams folder](https://github.com/BrujoCervino/CreditCardApplications/tree/master/ClassDiagrams).
 
