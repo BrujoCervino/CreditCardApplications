@@ -1,9 +1,11 @@
 ﻿using Globals.Enums;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace FrontEnd
 {
@@ -13,13 +15,8 @@ namespace FrontEnd
         {
             InitializeComponent();
 
-            // Populate TitleComboBox
-            foreach (string title in Enum.GetNames(typeof(Titles)))
-            {
-                TitleComboBox.Items.Add(title);
-            }
-            // TitleComboBox defaultly reads "Title"
-            TitleComboBox.Text = TitleComboBox.Items[0].ToString();
+            var titles = Enum.GetNames(typeof(Titles)).ToImmutableArray<object>();
+            InitComboBox(TitleComboBox, null, titles);
 
             // Populate the birthyear dropdown as either "YYYY" or between 1880 and the current year inclusive
             int earliestApplicantBirthyear = 1880;
@@ -65,6 +62,40 @@ namespace FrontEnd
             DayComboBox.Text = DayComboBox.Items[0].ToString();
         }
 
+        // Populates ComboBox cb with firstToAdd (e.g. "MM" before a list of months) then with objectsToAdd.
+        public void PopulateComboBox(in ComboBox cb, in object firstToAdd, in ImmutableArray<object> objectsToAdd)
+        {
+            if(null != cb)
+            {
+                if(null != firstToAdd)
+                {
+                    cb.Items.Add(firstToAdd);
+                }
+                if(null != objectsToAdd)
+                {
+                    foreach (object obj in objectsToAdd)
+                    {
+                        cb.Items.Add(obj); 
+                    }
+                }
+            }
+        }
 
+        // Sets a ComboBox's text to its items' first element, stringified. 
+        public void SetDefaultInComboBox(in ComboBox cb)
+        {
+            if (null != cb && null != cb.Items)
+            {
+                cb.Text = cb.Items[0].ToString();
+            }
+        }
+
+        // Sets up a combo box: populates its items and sets the default text/input as the first item in the list.
+        // Example: populate the months ComboBox and set its default as "MM".
+        public void InitComboBox(in ComboBox cb, in object firstToAdd, in ImmutableArray<object> objectsToAdd)
+        {
+            PopulateComboBox(cb, firstToAdd, objectsToAdd);
+            SetDefaultInComboBox(cb);
+        }
     }
 }

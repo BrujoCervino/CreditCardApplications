@@ -84,7 +84,6 @@ namespace FrontEnd
 
         private void SaveAndContinueButton_Click(object sender, RoutedEventArgs e)
         {
-#warning Crud update unfinished
 
             DateTime applicantBirthDate
                 = ParseBirthdate(MonthComboBox.Text, DayComboBox.Text, YearComboBox.Text);

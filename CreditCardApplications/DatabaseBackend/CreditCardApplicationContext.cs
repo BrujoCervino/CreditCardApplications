@@ -5,14 +5,13 @@ using System.Text;
 
 namespace DatabaseBackEnd
 {
-#warning need to change name from Model to CreditCardApplicationContext
-    public class Model : DbContext
+    public class CreditCardApplicationContext : DbContext
     {
         public DbSet<Applicant> Applicants { get; set; }
 
+#warning Hide the connection string
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CreditCardApplicationsDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-    
     }
 
     public class Applicant
@@ -31,7 +30,6 @@ namespace DatabaseBackEnd
         public string MobileNum { get; set; }
         public string HomeTelephoneNum { get; set; }
         public decimal AnnualPersonalIncome { get; set; }
-
         public decimal OtherHouseholdIncome { get; set; }
     }
 

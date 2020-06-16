@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DatabaseBackEnd.Migrations
 {
-    [DbContext(typeof(Model))]
+    [DbContext(typeof(CreditCardApplicationContext))]
     [Migration("20200616172623_InitialCreate")]
     partial class InitialCreate
     {

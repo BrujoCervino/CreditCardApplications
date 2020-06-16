@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DatabaseBackEnd.Migrations
 {
-    [DbContext(typeof(Model))]
+    [DbContext(typeof(CreditCardApplicationContext))]
     partial class ModelModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

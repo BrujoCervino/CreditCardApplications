@@ -14,7 +14,7 @@ namespace CardLib
             in DateTime birthDate, in string email, in string mobileNum, in string homeTelephoneNum, 
             in decimal annualPersonalIncome, in decimal OtherHouseholdIncome) 
         { 
-            using(var db = new Model())
+            using(var db = new CreditCardApplicationContext())
             {
                 db.Add(new Applicant 
                 {
