@@ -10,7 +10,28 @@ namespace CardLib
 
         // User makes a new application for a new card:
         // Bill applies for an Amex Platinum card
-        public static void CreateEntry() { }
+        public static void CreateEntry(in Titles title, in string firstName, in string middleName, in string surname, 
+            in DateTime birthDate, in string email, in string mobileNum, in string homeTelephoneNum, 
+            in decimal annualPersonalIncome, in decimal OtherHouseholdIncome) 
+        { 
+            using(var db = new Model())
+            {
+                db.Add(new Applicant 
+                {
+                    ApplicantId = 0,
+                    TitleId = (int)title,
+                    FirstName= firstName, 
+                    Surame = surname,
+                    BirthDate = birthDate,
+                    Email = email,
+                    MobileNum = mobileNum,
+                    HomeTelephoneNum = homeTelephoneNum,
+                    AnnualPersonalIncome = annualPersonalIncome,
+                    OtherHouseholdIncome = OtherHouseholdIncome
+                });
+                db.SaveChanges();
+            }
+        }
 
         public static void RetrieveAll() { }
 

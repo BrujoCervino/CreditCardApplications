@@ -1,5 +1,4 @@
-﻿using Globals.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,7 +8,7 @@ namespace DatabaseBackEnd
     public class CreditCardApplicant
     {
         // ~~ Personal Details ~~
-        public Titles Title { get; set; }
+        public Globals.Enums.Titles Title { get; set; }
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string Surname { get; set; }

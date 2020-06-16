@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudManager", "CardLib\Crud
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseBackEnd", "DatabaseBackend\DatabaseBackEnd.csproj", "{B8F7BA22-5BB8-4AA8-8A0F-1C738A0A1C0F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{08757D32-0864-4EBA-95AC-A5140E8FF977}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{9EEECBA0-533B-4CFF-8FE0-2B0D50C4AE1F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontEndTests", "FrontEndTests\FrontEndTests.csproj", "{8364E17E-6878-411D-B0DE-324901C57718}"
@@ -23,9 +21,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudManagerTests", "CrudManagerTests\CrudManagerTests.csproj", "{9F91FEC0-0402-4E4D-ACEC-4526808E351A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudManagerTests", "CrudManagerTests\CrudManagerTests.csproj", "{9F91FEC0-0402-4E4D-ACEC-4526808E351A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClassDiagrams", "ClassDiagrams", "{99F76456-174C-4093-8355-4BAD4C8AA4D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{DBD897CB-CC88-4566-99DD-1C8E38EA7ADE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,6 @@ Global
 		{B8F7BA22-5BB8-4AA8-8A0F-1C738A0A1C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8F7BA22-5BB8-4AA8-8A0F-1C738A0A1C0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8F7BA22-5BB8-4AA8-8A0F-1C738A0A1C0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{08757D32-0864-4EBA-95AC-A5140E8FF977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{08757D32-0864-4EBA-95AC-A5140E8FF977}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{08757D32-0864-4EBA-95AC-A5140E8FF977}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{08757D32-0864-4EBA-95AC-A5140E8FF977}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8364E17E-6878-411D-B0DE-324901C57718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8364E17E-6878-411D-B0DE-324901C57718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8364E17E-6878-411D-B0DE-324901C57718}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{9F91FEC0-0402-4E4D-ACEC-4526808E351A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F91FEC0-0402-4E4D-ACEC-4526808E351A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F91FEC0-0402-4E4D-ACEC-4526808E351A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBD897CB-CC88-4566-99DD-1C8E38EA7ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBD897CB-CC88-4566-99DD-1C8E38EA7ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBD897CB-CC88-4566-99DD-1C8E38EA7ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBD897CB-CC88-4566-99DD-1C8E38EA7ADE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

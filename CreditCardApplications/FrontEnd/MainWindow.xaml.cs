@@ -89,16 +89,9 @@ namespace FrontEnd
             DateTime applicantBirthDate
                 = ParseBirthdate(MonthComboBox.Text, DayComboBox.Text, YearComboBox.Text);
 
-            
+            Titles title = (Titles)TitleComboBox.SelectedIndex;
 
-            // CrudManager.Update
-            // (
-            //     (Titles)TitleComboBox.SelectedIndex,
-            //     FirstNameTextEntry.Text,
-            //     MiddleNameTextEntry.Text,
-            //     applicantBirthDate,
-            //
-            // );
+            CrudManager.CreateEntry(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
         }
     }
 }
