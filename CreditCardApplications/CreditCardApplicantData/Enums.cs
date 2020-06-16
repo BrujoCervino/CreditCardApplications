@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CreditCardApplicantData.Enums
+namespace Globals.Enums
 {
     public enum Titles
     {

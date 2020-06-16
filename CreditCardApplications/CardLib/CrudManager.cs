@@ -1,4 +1,4 @@
-﻿using CreditCardApplicantData.Enums;
+﻿using Globals.Enums;
 using DatabaseBackEnd;
 using System;
 
@@ -24,7 +24,7 @@ namespace CardLib
             string surname, DateTime birthDate, string email, int mobileNumber, int homePhoneNumber,
             string houseNumber, string postalCode,  decimal annualPersonalIncome, decimal otherHouseholdIncome)
         {
-
+            
         }
     }
 

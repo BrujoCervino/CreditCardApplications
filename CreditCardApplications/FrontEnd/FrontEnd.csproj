@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CardLib\CrudManager.csproj" />
-    <ProjectReference Include="..\CreditCardApplicantData\CreditCardApplicantData.csproj" />
+    <ProjectReference Include="..\CreditCardApplicantData\Globals.csproj" />
   </ItemGroup>
 
 </Project>
