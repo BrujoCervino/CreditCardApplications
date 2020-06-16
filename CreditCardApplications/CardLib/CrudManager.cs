@@ -22,6 +22,7 @@ namespace CardLib
                 ApplicantId = 0,
                 TitleId = (int)title,
                 FirstName = firstName,
+                MiddleName = middleName,
                 Surame = surname,
                 BirthDate = birthDate,
                 Email = email,

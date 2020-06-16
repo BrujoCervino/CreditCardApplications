@@ -112,8 +112,8 @@ namespace FrontEnd
             //  If null or default, let them equal their earliest possible value.
             //  ToDo: make the above a function and implement it here
             month = ((month != MonthsTitle) ? month : firstDayOrMonth) ?? firstDayOrMonth;
-            day = ((day != DaysTitle) ? day : firstDayOrMonth) ?? firstDayOrMonth;
-            year = ((year != YearsTitle) ? year : firstDayOrMonth) ?? firstYear;
+            day   = ((day != DaysTitle)     ? day   : firstDayOrMonth) ?? firstDayOrMonth;
+            year  = ((year != YearsTitle)   ? year  : firstDayOrMonth) ?? firstYear;
 
             // Parse the birthdate
             string stringifiedBirthdate = $"{month}/{day}/{year}";
