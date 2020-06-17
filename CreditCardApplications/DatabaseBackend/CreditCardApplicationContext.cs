@@ -14,15 +14,14 @@ namespace DatabaseBackEnd
             => options.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CreditCardApplicationsDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
     }
 
-    public class Applicant
+    public partial class Applicant
     {
         public int ApplicantId { get; set; }
         public int TitleId { get; set; }
         public string FirstName { get; set; }
 
         public string MiddleName { get; set; }
-#warning need to change name from Surame to Surname
-        public string Surame { get; set; }
+        public string Surname { get; set; }
 
         public DateTime BirthDate { get; set; }
 
