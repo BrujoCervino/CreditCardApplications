@@ -55,7 +55,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Image x:Name="CardImage" Grid.Row="0"/>
+                    <Image x:Name="CardImage" Grid.Row="0" Source="/UK_AXP_Preferred_Rewards_Gold_Card.png"/>
                     <Separator x:Name="CardImageSeparator" Margin="0,42,0,20" Grid.RowSpan="2" Width="85"/>
                 </Grid>
 

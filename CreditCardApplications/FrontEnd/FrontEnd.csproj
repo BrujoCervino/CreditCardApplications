@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AXP_World_Service.png" />
     <None Remove="desktop.ini" />
+    <None Remove="UK_AXP_Preferred_Rewards_Gold_Card.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +19,15 @@
   <ItemGroup>
     <ProjectReference Include="..\CardLib\CrudManager.csproj" />
     <ProjectReference Include="..\CreditCardApplicantData\Globals.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="AXP_World_Service.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UK_AXP_Preferred_Rewards_Gold_Card.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

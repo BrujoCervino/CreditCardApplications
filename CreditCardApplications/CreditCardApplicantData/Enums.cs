@@ -2,10 +2,12 @@
 
 namespace Globals.Enums
 {
+    // Has to remain simple in order to not conflict with previous credit checks.
+    // Titles like doctor/esquire/professor 
+    // et cetera are purely aesthetic in terms of credit checks.
     public enum Titles
     {
-        Title = 0,
-        Mr,
+        Mr = 1,
         Mrs,
         Miss,
         Ms

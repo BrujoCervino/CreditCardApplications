@@ -17,6 +17,7 @@ namespace FrontEnd
         public const string YearsTitle = "YYYY";
         public const string MonthsTitle = "MM";
         public const string DaysTitle = "DD";
+        public const string TitleTitle = "Title";
 
         public readonly int HighestFutureproofAge = 120;
         public const string FirstDayOrMonth = "01";
@@ -27,7 +28,7 @@ namespace FrontEnd
 
             // Initialise the title combo box
             var titles = Enum.GetNames(typeof(Titles)).ToImmutableArray<object>();
-            InitComboBox(TitleComboBox, null, titles);
+            InitComboBox(TitleComboBox, TitleTitle, titles);
 
             // Populate the birthyear dropdown as either "YYYY" 
             //  or between (this year and HighestFutureproofAge years ago) inclusive
@@ -68,10 +69,6 @@ namespace FrontEnd
             }
             // MonthComboBox defaultly reads "DD"
             SetDefaultInComboBox(DayComboBox);
-
-            ImageSource iS =
-                    new BitmapImage(new Uri(@"C:\Users\Fox_Mulder\Documents\Sparta\14-Week SDET Course\Projects\Project 2 - CRUD UI\CreditCardApplications\CreditCardApplications\FrontEnd\Graphics\UK_AXP_Preferred_Rewards_Gold_Card.png"));
-            CardImage.Source = iS;
         }
 
         // Populates ComboBox cb with firstToAdd (e.g. "MM" before a list of months) then with objectsToAdd.

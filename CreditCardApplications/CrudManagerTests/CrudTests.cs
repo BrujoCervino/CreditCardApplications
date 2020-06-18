@@ -18,11 +18,11 @@ namespace CrudManagerTests
         [Test(Author = "K McEvaddy")]
         public void CrudManagerCanCreateValidEntry()
         {
-            List<Applicant> oldApplicants = CrudManager.RetrieveAll();
-            CrudManager.CreateEntry(Titles.Mr, "Harry", "James",
+            List<Applicant> oldApplicants = CardLib.CrudManager.RetrieveAll();
+            CardLib.CrudManager.CreateEntry(Titles.Mr, "Harry", "James",
                 "Potter", new DateTime(2000, 12, 2), "harry.potter@mugglemail.com", "022222222222", "022222222222", 27_000, 9_999);
 
-            List<Applicant> currentApplicants = CrudManager.RetrieveAll();
+            List<Applicant> currentApplicants = CardLib.CrudManager.RetrieveAll();
 
             Assert.Greater(currentApplicants.Count, oldApplicants.Count);
         }
@@ -30,7 +30,7 @@ namespace CrudManagerTests
         [Test(Author = "K McEvaddy")]
         public void CrudManagerCanReadValidEntry()
         {
-            List<Applicant> entries = CrudManager.RetrieveAll();
+            List<Applicant> entries = CardLib.CrudManager.RetrieveAll();
             Assert.NotNull(entries);
             Assert.Greater(entries.Count, 0);
         }
@@ -45,7 +45,7 @@ namespace CrudManagerTests
         public void CrudManagerCanDeleteValidEntry()
         {
             // Get applicants
-            var oldApplicants = CrudManager.RetrieveAll();
+            var oldApplicants = CardLib.CrudManager.RetrieveAll();
             // Create new applicant
             var applicantToAdd = new Applicant()
             {
@@ -60,7 +60,7 @@ namespace CrudManagerTests
                 HomeTelephoneNum = "00"
             };
             // Get applicant to edit
-            CrudManager.CreateEntry
+            CardLib.CrudManager.CreateEntry
             (
                (Titles)applicantToAdd.TitleId,
                applicantToAdd.FirstName,
@@ -74,7 +74,7 @@ namespace CrudManagerTests
                applicantToAdd.OtherHouseholdIncome
             );
             // Edit applicant
-            var currentApplicants = CrudManager.RetrieveAll();
+            var currentApplicants = CardLib.CrudManager.RetrieveAll();
             var applicantToEdit = currentApplicants.First(a => a.FirstName == "Brian" && a.Surname == "Griffin");
             // Get database again
             applicantToEdit.TitleId = (int)Titles.Mrs;
