@@ -64,7 +64,7 @@ namespace FrontEnd
 
             // Parse the birthdate and title
             DateTime applicantBirthDate
-            = ParseAndFormatBirthdate(MonthComboBox.Text, DayComboBox.Text, YearComboBox.Text);
+            = ParseAndFormatBirthdate(DayComboBox.Text, MonthComboBox.Text, YearComboBox.Text);
 
             Titles title = (Titles)TitleComboBox.SelectedIndex;
 

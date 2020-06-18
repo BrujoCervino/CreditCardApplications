@@ -24,6 +24,7 @@ namespace FrontEnd
 
         public readonly ImmutableList<object> YearsList;
         public readonly ImmutableList<object> MonthsList;
+        public readonly ImmutableList<object> DaysList;
 
         public MainWindow()
         {
@@ -60,20 +61,21 @@ namespace FrontEnd
             MonthsList = months.ToImmutableList();
             InitComboBox(MonthComboBox, MonthsTitle, MonthsList);
 
-            // Populate the birthday dropdown as either "DD" or between 01 and 31 inclusive
-            DayComboBox.Items.Add("DD");
-            for (int i = 1; i <= 31; ++i)
+            // Populate the birthday dropdown as either "DD" 
+            //  or between 01 and 31 inclusive
+            object[] days = new object[31];
+            for (int index = 0, element = 1; index < days.Length; ++index, ++element)
             {
                 stringBuilder.Clear();
-                if (i < 10)
+                if (element < 10)
                 {
                     stringBuilder.Append('0');
                 }
-                stringBuilder.Append(i.ToString());
-                DayComboBox.Items.Add(stringBuilder.ToString());
+                stringBuilder.Append(element.ToString());
+                days[index] = stringBuilder.ToString();
             }
-            // MonthComboBox defaultly reads "DD"
-            SetDefaultInComboBox(DayComboBox);
+            DaysList = days.ToImmutableList();
+            InitComboBox(DayComboBox, DaysTitle, DaysList);
         }
 
         // Populates ComboBox cb with firstToAdd (e.g. "MM" before a list of months) then with objectsToAdd.
@@ -113,7 +115,7 @@ namespace FrontEnd
         }
 
         // Parses the given birthyear, replacing any nulls or defaults with the earliest valid element in its list
-        private DateTime ParseAndFormatBirthdate(string month, string day, string year)
+        private DateTime ParseAndFormatBirthdate(string day, string month, string year)
         {
             string firstYear = (DateTime.Now.Year - HighestFutureproofAge).ToString();
             // Format day, month and year:
@@ -124,7 +126,7 @@ namespace FrontEnd
             year  = ((year != YearsTitle)   ? year  : FirstDayOrMonth) ?? firstYear;
 
             // Parse the birthdate
-            string stringifiedBirthdate = $"{month}/{day}/{year}";
+            string stringifiedBirthdate = $"{day}/{month}/{year}";
             return DateTime.Parse(stringifiedBirthdate);
         }
     }
