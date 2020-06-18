@@ -91,8 +91,7 @@
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="Title"/>
                         </TextBlock>
-                        <ComboBox x:Name="TitleComboBox" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" SelectionChanged="TitleComboBox_SelectionChanged">
-                        </ComboBox>
+                        <ComboBox x:Name="TitleComboBox" Grid.Column="0" VerticalContentAlignment="Center" SelectionChanged="TitleComboBox_SelectionChanged" Margin="0,18,0,0" Grid.RowSpan="2"/>
                         <TextBlock x:Name="FirstNameText" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0" >
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="First Name"/>
@@ -157,9 +156,9 @@
                             <Run Text="Date of Birth"/>
                         </TextBlock>
 
-                        <ComboBox x:Name="DayComboBox" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
-                        <ComboBox x:Name="MonthComboBox" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
-                        <ComboBox x:Name="YearComboBox" Grid.Column="1" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Grid.ColumnSpan="2" Margin="86,18,10,0" Grid.RowSpan="2"/>
+                        <ComboBox x:Uid="Day" x:Name="DayComboBox" Grid.Column="0" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Grid.ColumnSpan="2" Margin="0,18,86,0" Grid.RowSpan="2"/>
+                        <ComboBox x:Uid="Month" x:Name="MonthComboBox" Grid.Column="1" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Margin="0,18,0,0" Grid.RowSpan="2"/>
+                        <ComboBox x:Uid="Year" x:Name="YearComboBox" Grid.Column="1" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Grid.ColumnSpan="2" Margin="86,18,10,0" Grid.RowSpan="2"/>
                     </Grid>
 
                     <TextBlock x:Name="ContactDetailsText" Grid.Row="5" Text="CONTACT DETAILS" Margin="0,10,0,27" Grid.RowSpan="2" FontWeight="Bold" Foreground="SlateGray"/>

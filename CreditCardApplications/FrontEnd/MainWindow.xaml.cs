@@ -38,10 +38,6 @@ namespace FrontEnd
             throw new NotImplementedException();
         }
 
-        private void BirthdateComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
-
         private void EmailEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -54,8 +50,13 @@ namespace FrontEnd
 
         private void SaveAndContinueButton_Click(object sender, RoutedEventArgs e)
         {
-            // Don't allow the user to submit their application until the title box contains a valid value
-            if (!TitleBoxIsValid())
+            // Don't allow the user to submit their application until these are valid:
+            // Title, First Name, Surname, Email
+            if (!TitleBoxIsValid()
+                || !TextEntryIsValid(FirstNameTextEntry)
+                || !TextEntryIsValid(SurnameTextEntry)
+                || !EmailIsValid(EmailEntry)
+                || !DateDropDownIsValid(YearComboBox, Years, YearsTitle))
             {
                 return;
             }
@@ -75,9 +76,17 @@ namespace FrontEnd
             Close(); // Close current window
         }
 
-        private bool FirstNameTextEntryIsValid()
+        // Returns true only if text entry is not null and its text is not null or whitespace or empty
+        protected bool TextEntryIsValid(in TextBox textEntry)
         {
-            return FirstNameTextEntry != null && !string.IsNullOrWhiteSpace(FirstNameTextEntry.Text);
+            return textEntry != null && !string.IsNullOrWhiteSpace(textEntry.Text);
+        }
+
+        // Returns true only if TextEntryIsValid(emailEntry) and the email contains character '@'.
+        protected bool EmailIsValid(in TextBox emailEntry)
+        {
+#warning Unit Test this. It should never throw a null exception because of the short circuit
+            return TextEntryIsValid(emailEntry) && emailEntry.Text.Contains('@');
         }
 
         // Returns true only if the title combo box is not null and its text is not null and its text contains an element of the titles enum.
@@ -86,6 +95,71 @@ namespace FrontEnd
             return TitleComboBox != null
                 && TitleComboBox.Text != null
                 && Enum.GetNames(typeof(Titles)).Contains(TitleComboBox.Text);
+        }
+
+        protected bool DateDropDownIsValid(in ComboBox cb, in ImmutableList<object> range, in string undesired)
+        {
+            return
+                // Combo box
+                cb != null
+                && cb.SelectedItem != null
+                // Range
+                && range != null
+                && range.Count > 0
+                // Undesired
+                && !string.IsNullOrWhiteSpace(undesired)
+                && cb.SelectedItem.ToString() != undesired
+                // Containing
+                && range.Contains(cb.SelectedItem);
+        }
+
+        protected void BirthdateComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+
+#warning Change this function so that the number of days shown in the day box depends on the months box and whether the year is a leap year
+            switch (comboBox.Uid) // Todo: change this to an if statement instead
+            {
+                ////Commented out because it throws an exception. Fix soon:
+                // case "Year": break;
+                // case "Month": 
+                //     var month = (comboBox.SelectedItem != MonthsTitle) 
+                //         ? (int)comboBox.SelectedItem
+                //         : (int)Months.January; // January has 31 days
+                //     
+                //     int year = (YearComboBox.SelectedItem.ToString() != YearsTitle)
+                //         ? (int)YearComboBox.SelectedItem
+                //         : DateTime.Now.Year;
+                //
+                //     if (DayComboBox != null && DayComboBox.Items != null && DayComboBox.Items.Count > 0)
+                //     {
+                //         DayComboBox.Items[DayComboBox.Items.Count - 1] = GetNumDaysInMonth(month, year);  
+                //     }
+                //     break;
+                // case "Day": break;
+                // default: break;
+            }
+        }
+
+        protected int GetNumDaysInMonth(in int month, in int year)
+        {
+            Months eMonth = (Months)month;
+
+            int numDays = 31;
+            switch (eMonth)
+            {
+                case Months.February:
+                    numDays = (DateTime.IsLeapYear(year)) ? 29 : 28;
+                    break;
+                case Months.April:
+                case Months.June:
+                case Months.September:
+                case Months.November:
+                    numDays = 30;
+                    break;
+            }
+
+            return numDays;
         }
     }
 }

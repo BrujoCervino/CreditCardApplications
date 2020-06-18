@@ -13,21 +13,23 @@ namespace FrontEnd
 {
     public partial class MainWindow : Window
     {
-        // Birthdate ComboBox titles
+        // ComboBox defaults
         public const string YearsTitle = "YYYY";
         public const string MonthsTitle = "MM";
         public const string DaysTitle = "DD";
         public const string TitleTitle = "Title";
 
-        public readonly int HighestFutureproofAge = 120;
+        public static readonly int HighestFutureproofAge = 120;
         public const string FirstDayOrMonth = "01";
+
+        public readonly ImmutableList<object> Years;
 
         public MainWindow()
         {
             InitializeComponent();
 
             // Initialise the title combo box
-            var titles = Enum.GetNames(typeof(Titles)).ToImmutableArray<object>();
+            var titles = Enum.GetNames(typeof(Titles)).ToImmutableList<object>();
             InitComboBox(TitleComboBox, TitleTitle, titles);
 
             // Populate the birthyear dropdown as either "YYYY" 
@@ -37,7 +39,8 @@ namespace FrontEnd
             {
                 years[i] = DateTime.Now.Year - i;
             }
-            InitComboBox(YearComboBox, YearsTitle, years.ToImmutableArray());
+            Years = years.ToImmutableList();
+            InitComboBox(YearComboBox, YearsTitle, years.ToImmutableList());
 
             // Populate the birthmonth dropdown as either "MM" or between 01 and 12 inclusive
             MonthComboBox.Items.Add(MonthsTitle);
@@ -72,7 +75,7 @@ namespace FrontEnd
         }
 
         // Populates ComboBox cb with firstToAdd (e.g. "MM" before a list of months) then with objectsToAdd.
-        private void PopulateComboBox(in ComboBox cb, in object firstToAdd, in ImmutableArray<object> objectsToAdd)
+        private void PopulateComboBox(in ComboBox cb, in object firstToAdd, in ImmutableList<object> objectsToAdd)
         {
             if(null != cb)
             {
@@ -80,7 +83,7 @@ namespace FrontEnd
                 {
                     cb.Items.Add(firstToAdd);
                 }
-                if(null != objectsToAdd && objectsToAdd.Length > 0)
+                if(null != objectsToAdd && objectsToAdd.Count > 0)
                 {
                     foreach (object obj in objectsToAdd)
                     {
@@ -101,7 +104,7 @@ namespace FrontEnd
 
         // Sets up a combo box: populates its items and sets the default text/input as the first item in the list.
         // Example: populate the months ComboBox and set its default as "MM".
-        protected void InitComboBox(in ComboBox cb, in object firstToAdd, in ImmutableArray<object> objectsToAdd)
+        protected void InitComboBox(in ComboBox cb, in object firstToAdd, in ImmutableList<object> objectsToAdd)
         {
             PopulateComboBox(cb, firstToAdd, objectsToAdd);
             SetDefaultInComboBox(cb);
