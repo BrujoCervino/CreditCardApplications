@@ -4,8 +4,9 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace CardLib
+namespace CrudOperations 
 {
+#warning it may be worth having a wrapper class for this: create entry is not the most descriptive term. Better would be CreditApplications.Apply(Applicant a)
     public class CrudManager
     {
         // The appluca

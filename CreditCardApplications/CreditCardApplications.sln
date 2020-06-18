@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudManager", "CardLib\CrudManager.csproj", "{6196B9B8-409C-44AA-A5B3-097200577DE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudOperations", "CardLib\CrudOperations.csproj", "{6196B9B8-409C-44AA-A5B3-097200577DE5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseBackEnd", "DatabaseBackend\DatabaseBackEnd.csproj", "{B8F7BA22-5BB8-4AA8-8A0F-1C738A0A1C0F}"
 EndProject
@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudManagerTests", "CrudManagerTests\CrudManagerTests.csproj", "{9F91FEC0-0402-4E4D-ACEC-4526808E351A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudOperationsTests", "CrudManagerTests\CrudOperationsTests.csproj", "{9F91FEC0-0402-4E4D-ACEC-4526808E351A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClassDiagrams", "ClassDiagrams", "{99F76456-174C-4093-8355-4BAD4C8AA4D9}"
 EndProject

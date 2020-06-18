@@ -19,9 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CardLib\CrudManager.csproj" />
+    <ProjectReference Include="..\CardLib\CrudOperations.csproj" />
     <ProjectReference Include="..\CreditCardApplicantData\Globals.csproj" />
-    <ProjectReference Include="..\DatabaseBackend\DatabaseBackEnd.csproj" />
     <ProjectReference Include="..\FrontEnd\FrontEnd.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-﻿using CardLib;
+﻿using CrudOperations;
 using Globals.Enums;
 using DatabaseBackEnd;
 using System;
@@ -33,14 +33,14 @@ namespace FrontEnd
             //DisplayApprovalIcon(approved);
         }
 
-        private void DisplayApprovalIcon(bool approved) 
+        private void DisplayApprovalIcon(bool approved)
         {
             throw new NotImplementedException();
         }
 
         private void BirthdateComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-        }   
+        }
 
         private void EmailEntry_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -54,21 +54,38 @@ namespace FrontEnd
 
         private void SaveAndContinueButton_Click(object sender, RoutedEventArgs e)
         {
-            // Todo: early return if any input is invalid
-            
+            // Don't allow the user to submit their application until the title box contains a valid value
+            if (!TitleBoxIsValid())
+            {
+                return;
+            }
+
             // Parse the birthdate and title
             DateTime applicantBirthDate
-                = ParseAndFormatBirthdate(MonthComboBox.Text, DayComboBox.Text, YearComboBox.Text);
+            = ParseAndFormatBirthdate(MonthComboBox.Text, DayComboBox.Text, YearComboBox.Text);
 
             Titles title = (Titles)TitleComboBox.SelectedIndex;
 
             // Process the applicant's application
-            CardLib.CrudManager.CreateEntry(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
+            CrudManager.CreateEntry(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
 
             var acceptedWindow = new AcceptedWindow(); // Make new window
             acceptedWindow.Show();
             acceptedWindow.Focus();
             Close(); // Close current window
+        }
+
+        private bool FirstNameTextEntryIsValid()
+        {
+            return FirstNameTextEntry != null && !string.IsNullOrWhiteSpace(FirstNameTextEntry.Text);
+        }
+
+        // Returns true only if the title combo box is not null and its text is not null and its text contains an element of the titles enum.
+        protected bool TitleBoxIsValid()
+        {
+            return TitleComboBox != null
+                && TitleComboBox.Text != null
+                && Enum.GetNames(typeof(Titles)).Contains(TitleComboBox.Text);
         }
     }
 }

@@ -105,8 +105,9 @@ I can receive my credit card
 |Globals|Global variables|
 |FrontEnd|GUI|
 |DatabaseBackEnd|Database|
-|CrudManager|"Business end": Communication between the database and the front-end|
-|FrontEndTests|GUI Test|
+|CrudOperations|"Business end": Communication between the database and the front-end|
+|FrontEndTests|GUI Tests|
+|CrudOperationsTests| "Business end" Tests|
 
 ### Class Diagrams
 
