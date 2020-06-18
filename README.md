@@ -63,18 +63,31 @@ I can receive my credit card
 
 |Name|Moved From Column|Moved To Column|
 |----|-----------------|---------------|
-|||
-|||
+|[Project Management 💳 📚✨:Sprint 2 - Start](https://github.com/users/BrujoCervino/projects/1#card-40171942)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 2 💳 - 'Application Finished' Page 📃](https://github.com/users/BrujoCervino/projects/1#card-40288826)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 2 💳 - Generate Database](https://github.com/users/BrujoCervino/projects/1#card-40171523)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 2 💳 - Functional Create ✨](https://github.com/users/BrujoCervino/projects/1#card-40204405)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 2 💳 - Functional Read 📚](https://github.com/users/BrujoCervino/projects/1#card-40206819)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 2 💳 - Functional Delete 🔥](https://github.com/users/BrujoCervino/projects/1#card-40207360)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 2 💳 - Functional Update ⚙️](https://github.com/users/BrujoCervino/projects/1#card-40316123)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Project Management 💳 📚✨: Sprint 2 - End](https://github.com/users/BrujoCervino/projects/1#card-40171967)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+
+<br/>
+
 
 💳 **Sprint Retrospective**
 <br/><br/>
-♦ **0: Mon, Jun-13**: Happy I got so far in replicating the source material: I've almost nailed the visuals.<br/>
+♦ **0: Mon, Jun-15**: Happy I got so far in replicating the source material: I've almost nailed the visuals.<br/>
 ♣ *Learned*: Lots and lots of WPF: ComboBoxes, ListBoxes, rounded corners and more. <br/>
 ♣ *What I'll do differently next time*: Get the database up and running as well as just the GUI.<br/>
 <br/>
-♦ **1: Mon, Jun-13**: Happy I got so far with project management. That will save me time and stress later in the project.<br/>
+♦ **1: Tue, Jun-16**: Happy I got so far with project management. That will save me time and stress later in the project.<br/>
 ♣ *Learned*: Lots of Github Markdown language (for this documentation and the project board). How to make foreign keys in SQL Server.<br/>
 ♣ *What I'll do differently next time*: Get the database up and running: I am almost there and it should be done by tomorrow's sprint's end.<br/>
+<br/>
+♦ **2: Thu, Jun-18**: Happy I got CRUD operations working and the 'accepted' window. Unhappy with lots of "invisible work": my frontend barely looks different than it did at the start - is this because I got most of it out the way early?<br/>
+♣ *Learned*: How to make a new window, that tests for CRUD take longer to write than standard tests.<br/>
+♣ *What I'll do differently next time*: Write more unit tests, write them earlier.<br/>
 <br/>
 💳 **Project Retrospective**
 
