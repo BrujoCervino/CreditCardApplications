@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace FrontEnd
 {
@@ -66,6 +68,10 @@ namespace FrontEnd
             }
             // MonthComboBox defaultly reads "DD"
             SetDefaultInComboBox(DayComboBox);
+
+            ImageSource iS =
+                    new BitmapImage(new Uri(@"C:\Users\Fox_Mulder\Documents\Sparta\14-Week SDET Course\Projects\Project 2 - CRUD UI\CreditCardApplications\CreditCardApplications\FrontEnd\Graphics\UK_AXP_Preferred_Rewards_Gold_Card.png"));
+            CardImage.Source = iS;
         }
 
         // Populates ComboBox cb with firstToAdd (e.g. "MM" before a list of months) then with objectsToAdd.

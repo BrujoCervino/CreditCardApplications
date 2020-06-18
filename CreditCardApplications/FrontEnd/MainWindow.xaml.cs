@@ -64,6 +64,11 @@ namespace FrontEnd
 
             // Process the applicant's application
             CrudManager.CreateEntry(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
+
+            var acceptedWindow = new AcceptedWindow(); // Make new window
+            acceptedWindow.Show();
+            acceptedWindow.Focus();
+            Close(); // Close current window
         }
     }
 }

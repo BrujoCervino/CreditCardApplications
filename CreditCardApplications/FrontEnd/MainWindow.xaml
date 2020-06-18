@@ -33,19 +33,33 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid x:Name="CentreGrid" Grid.ColumnSpan="3" Margin="240,0,240,0">
+            <Grid x:Name="CentreGrid" Grid.ColumnSpan="3" Margin="220,0,220,0">
                 <!--The good stuff goes on in the screen's centre-->
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition>
+                    <ColumnDefinition Width="13*">
                     </ColumnDefinition>
-                    <ColumnDefinition>
-                        <ColumnDefinition.MaxWidth>100</ColumnDefinition.MaxWidth>
+                    <ColumnDefinition Width="5*">
+
                     </ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <Rectangle x:Name="CardDisplayColumn" Grid.Column="1" Fill="LightGray"/>
 
-                <Grid x:Name="FormGrid">
+                <Grid Grid.Column="1">
+                    <!--Side panel Grid-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Image x:Name="CardImage" Grid.Row="0"/>
+                    <Separator x:Name="CardImageSeparator" Margin="0,42,0,20" Grid.RowSpan="2" Width="85"/>
+                </Grid>
+
+                <Grid x:Name="FormGrid" Grid.Column="0">
                     <Grid.RowDefinitions>
                         <RowDefinition x:Name="ProvideDetailsRow"/>
                         <RowDefinition/>
@@ -57,10 +71,10 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock x:Name="ProvideDetailsText" Grid.Row="0" TextWrapping="Wrap" FontSize="10" 
-                               Text="Please provide your details and we will perform a credit check in 60 seconds"
-                    />
-                    <Separator x:Name="PersonalDetailsSeparator" Grid.Row="1" Margin="0,14,0,31" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="ProvideDetailsDescriptionText" Grid.Row="0" TextWrapping="Wrap" FontSize="11" 
+                               Text="Please provide your details and we will perform &#xA;a credit check in 60 seconds"/>
+                    <TextBlock x:Name="PersonalDetailsText" Grid.Row="1" Text="PERSONAL DETAILS" Margin="0,10,0,27" Grid.RowSpan="2" FontWeight="Bold" Foreground="SlateGray"/>
+                    <Separator x:Name="PersonalDetailsSeparator" Grid.Row="1" Margin="0,14,10,31" Grid.RowSpan="2"/>
 
                     <Grid Grid.Row="2">
                         <!--Title and FirstName Grid-->
@@ -77,13 +91,13 @@
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="Title"/>
                         </TextBlock>
-                        <ComboBox x:Name="TitleComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="TitleComboBox_SelectionChanged">
+                        <ComboBox x:Name="TitleComboBox" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" SelectionChanged="TitleComboBox_SelectionChanged">
                         </ComboBox>
-                        <TextBlock x:Name="FirstNameText" Grid.Row="0" Grid.Column="1">
+                        <TextBlock x:Name="FirstNameText" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0" >
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="First Name"/>
                         </TextBlock>
-                        <TextBox x:Name="FirstNameTextEntry"  Grid.Row="1" Grid.Column="1">
+                        <TextBox x:Name="FirstNameTextEntry" Grid.Column="1" Margin="0,18,10,0" Grid.RowSpan="2">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="3"/>
@@ -104,7 +118,7 @@
                             <RowDefinition x:Name="SurnameTextEntrySection"></RowDefinition>
                         </Grid.RowDefinitions>
                         <TextBlock x:Name="MiddleNameText" Grid.Row="0" Grid.Column="0" FontSize="7" Text="Middle Name (optional)"/>
-                        <TextBox x:Name="MiddleNameTextEntry" Grid.Row="1" Grid.Column="0">
+                        <TextBox x:Name="MiddleNameTextEntry" Grid.Column="0" Margin="0,18,0,0" Grid.RowSpan="2">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="3"/>
@@ -112,11 +126,11 @@
                             </TextBox.Resources>
                         </TextBox>
 
-                        <TextBlock x:Name="SurnameText" Grid.Row="0" Grid.Column="1">
+                        <TextBlock x:Name="SurnameText" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0">
                             <Run Foreground="Red" Text="*"/>
                             <Run Text="Surname"/>
                         </TextBlock>
-                        <TextBox x:Name="SurnameTextEntry" Grid.Row="1" Grid.Column="1">
+                        <TextBox x:Name="SurnameTextEntry" Grid.Column="1" Margin="0,18,10,0" Grid.RowSpan="2">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="3"/>
@@ -143,12 +157,13 @@
                             <Run Text="Date of Birth"/>
                         </TextBlock>
 
-                        <ComboBox x:Name="DayComboBox" Grid.Row="1" Grid.Column="0" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
-                        <ComboBox x:Name="MonthComboBox" Grid.Row="1" Grid.Column="1" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
-                        <ComboBox x:Name="YearComboBox" Grid.Row="1" Grid.Column="2" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
+                        <ComboBox x:Name="DayComboBox" Grid.Row="1" Grid.Column="0" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
+                        <ComboBox x:Name="MonthComboBox" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged"/>
+                        <ComboBox x:Name="YearComboBox" Grid.Column="1" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Grid.ColumnSpan="2" Margin="86,18,10,0" Grid.RowSpan="2"/>
                     </Grid>
 
-                    <Separator Grid.Row="5"/>
+                    <TextBlock x:Name="ContactDetailsText" Grid.Row="5" Text="CONTACT DETAILS" Margin="0,10,0,27" Grid.RowSpan="2" FontWeight="Bold" Foreground="SlateGray"/>
+                    <Separator Grid.Row="5" Margin="0,10,10,30" Grid.RowSpan="2"/>
 
                     <Grid Grid.Row="6">
                         <!--Email Grid-->
@@ -162,7 +177,7 @@
                             <Run Text="Email Address"/>
                         </TextBlock>
 
-                        <TextBox x:Name="EmailEntry" Grid.Row="1" AcceptsReturn="False" TextChanged="EmailEntry_TextChanged">
+                        <TextBox x:Name="EmailEntry" AcceptsReturn="False" TextChanged="EmailEntry_TextChanged" Margin="0,18,10,0" Grid.RowSpan="2">
                             <TextBox.Resources>
                                 <Style TargetType="{x:Type Border}">
                                     <Setter Property="CornerRadius" Value="3"/>
@@ -171,7 +186,8 @@
                         </TextBox>
                     </Grid>
 
-                    <Button Grid.Row="7" Content="Save &amp; Continue" Click="SaveAndContinueButton_Click"> <!--Save and Continue Button-->
+                    <Button Grid.Row="7" Content="Save &amp; Continue" Click="SaveAndContinueButton_Click" Margin="60,0,60,0">
+                        <!--Save and Continue Button-->
                         <Button.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="3"/>

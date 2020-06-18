@@ -43,7 +43,7 @@ namespace CardLib
 
         // In terms of card application, 
         //  edit an entry due to incorrect data (incorrect income entered etc.)
-        public static void UpdateEntry() 
+        public static void UpdateEntry(in Applicant applicantToUpdate) 
         {
             using(var db = new CreditCardApplicationContext())
             {
@@ -53,6 +53,7 @@ namespace CardLib
                 applicant.Email = "janine@spleenmail.com";
 
                 db.SaveChanges();
+#warning Write a test for this^
             }
         }
         // In terms of card application, erase an entry due to a fraudulent application

@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CardLib\CrudManager.csproj" />
     <ProjectReference Include="..\CreditCardApplicantData\Globals.csproj" />
   </ItemGroup>

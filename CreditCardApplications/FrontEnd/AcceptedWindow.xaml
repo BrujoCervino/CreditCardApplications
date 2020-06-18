@@ -1,0 +1,25 @@
+﻿<Window x:Class="FrontEnd.AcceptedWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FrontEnd"
+        mc:Ignorable="d"
+        Title="AcceptedWindow" Height="450" Width="800">
+    <Grid x:Name="MyGrid">
+        <Image x:Name="BackgroundImage" Width="1200" Height="487.5" Margin="-200,-60,0,0"/> <!--Bad practice: overdraw. This image may need to be cut.-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="CardImage" Grid.Row="0" Width="300" Height="200"/>
+
+            <TextBlock Grid.Row="1" Text="You were accepted!" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+            <TextBlock Grid.Row="1" Text="Your card will arrive in 7-10 working days" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White" Margin="0,140,0,0"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
