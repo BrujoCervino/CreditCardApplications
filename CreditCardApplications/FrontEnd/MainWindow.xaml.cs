@@ -56,7 +56,8 @@ namespace FrontEnd
                 || !TextEntryIsValid(FirstNameTextEntry)
                 || !TextEntryIsValid(SurnameTextEntry)
                 || !EmailIsValid(EmailEntry)
-                || !DateDropDownIsValid(YearComboBox, Years, YearsTitle))
+                || !DateDropDownIsValid(YearComboBox, YearsList, YearsTitle)
+                || !DateDropDownIsValid(MonthComboBox, MonthsList, MonthsTitle))
             {
                 return;
             }

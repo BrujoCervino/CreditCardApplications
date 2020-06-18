@@ -22,7 +22,8 @@ namespace FrontEnd
         public static readonly int HighestFutureproofAge = 120;
         public const string FirstDayOrMonth = "01";
 
-        public readonly ImmutableList<object> Years;
+        public readonly ImmutableList<object> YearsList;
+        public readonly ImmutableList<object> MonthsList;
 
         public MainWindow()
         {
@@ -39,24 +40,25 @@ namespace FrontEnd
             {
                 years[i] = DateTime.Now.Year - i;
             }
-            Years = years.ToImmutableList();
+            YearsList = years.ToImmutableList();
             InitComboBox(YearComboBox, YearsTitle, years.ToImmutableList());
 
-            // Populate the birthmonth dropdown as either "MM" or between 01 and 12 inclusive
-            MonthComboBox.Items.Add(MonthsTitle);
+            // Populate the birthmonth dropdown as either "MM" 
+            //  or between 01 and 12 inclusive
+            object[] months = new object[(int)Months.December];
             StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 1; i <= (int)Months.December; ++i)
+            for (int index = 0, element = 1; index <= (int)Months.December - 1; ++index, ++element)
             {
                 stringBuilder.Clear();
-                if (i < 10)
+                if (element < 10)
                 {
                     stringBuilder.Append('0');
                 }
-                stringBuilder.Append(i.ToString());
-                MonthComboBox.Items.Add(stringBuilder.ToString());
+                stringBuilder.Append((element).ToString());
+                months[index] = stringBuilder.ToString();
             }
-            // MonthComboBox defaultly reads "MM"
-            SetDefaultInComboBox(MonthComboBox);
+            MonthsList = months.ToImmutableList();
+            InitComboBox(MonthComboBox, MonthsTitle, MonthsList);
 
             // Populate the birthday dropdown as either "DD" or between 01 and 31 inclusive
             DayComboBox.Items.Add("DD");
