@@ -42,14 +42,14 @@ I can receive my credit card
 |0 (Meta-sprint)    |Weekend         |✅|*[Unnecessary]*|<img src="SprintScreenshots/Sprint0_Board.png" alt="Sprint 0 picture" width="250"/>|
 |1     |Monday - Early Tuesday       |✅|<img src="SprintScreenshots/Sprint1_Board_Start.png" alt="Sprint 1 Start" width="250"/>|<img src="SprintScreenshots/Sprint1_Board_End.png" alt="Sprint 1 End" width="250"/>|
 |2     |Late Tuesday - Early Thursday|✅|<img src="SprintScreenshots/Sprint2_Board_Start.png" alt="Sprint 2 Start" width="250"/>|<img src="SprintScreenshots/Sprint2_Board_End.png" alt="Sprint 2 End" width="250"/>|
-|3     |Late Thursday - Early Friday |⬜️|<img src="SprintScreenshots/Sprint3_Board_Start.png" alt="Sprint 3 Start" width="250"/>|<img src="SprintScreenshots/Sprint3_Board_End.png" alt="Sprint 3 End" width="250"/>|
+|3     |Late Thursday - Early Friday |✅|<img src="SprintScreenshots/Sprint3_Board_Start.png" alt="Sprint 3 Start" width="250"/>|<img src="SprintScreenshots/Sprint3_Board_End.png" alt="Sprint 3 End" width="250"/>|
 |4     |Late Friday                  |⬜️|<img src="SprintScreenshots/Sprint4_Board_Start.png" alt="Sprint 4 Start" width="250"/>|<img src="SprintScreenshots/Sprint4_Board_End.png" alt="Sprint 4 End" width="250"/>|
 |5     |Weekend                      |⬜️|<img src="SprintScreenshots/Sprint5_Board_Start.png" alt="Sprint 5 Start" width="250"/>|<img src="SprintScreenshots/Sprint5_Board_End.png" alt="Sprint 5 End" width="250"/>|
 
 💳 **Sprint Reviews**
 
-♦ 0: Mon, Jun-13: Showed stakeholder my GUI.<br/>
-♦ 1: Tue, Jun-14: Showed stakeholder my project management ([ReadMe.md](https://github.com/BrujoCervino/CreditCardApplications/blob/master/README.md) and [Project Board](https://github.com/users/BrujoCervino/projects/1)). 
+♦ **0: Mon, Jun-13**: Showed stakeholder my GUI.<br/>
+♦ **1: Tue, Jun-14**: Showed stakeholder my project management ([ReadMe.md](https://github.com/BrujoCervino/CreditCardApplications/blob/master/README.md) and [Project Board](https://github.com/users/BrujoCervino/projects/1)). 
 <br/>♣   Renamed [Sprint 1 💳 - Sprint Goals](https://github.com/users/BrujoCervino/projects/1#card-40190169) to *Sprint 2 💳 - Sprint Goals* <br/>
 
 |Name|Moved From Column|Moved To Column|
@@ -58,7 +58,7 @@ I can receive my credit card
 |[Project Management 💳 📚✨: Sprint 1 - End](https://github.com/users/BrujoCervino/projects/1#card-40171151)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
 |[Project Management 💳 📚✨: Sprint 1 - Start](https://github.com/users/BrujoCervino/projects/1#card-40171151)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
 
-♦2: Thu, Jun-18: Showed **stakeholder group** the new 'Accepted' Window and my project management
+♦ **2: Thu, Jun-18**: Showed **stakeholder group** the new 'Accepted' Window and my project management
 <br/>
 
 |Name|Moved From Column|Moved To Column|
@@ -71,8 +71,25 @@ I can receive my credit card
 |[Sprint 2 💳 - Functional Delete 🔥](https://github.com/users/BrujoCervino/projects/1#card-40207360)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
 |[Sprint 2 💳 - Functional Update ⚙️](https://github.com/users/BrujoCervino/projects/1#card-40316123)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
 |[Project Management 💳 📚✨: Sprint 2 - End](https://github.com/users/BrujoCervino/projects/1#card-40171967)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprints 1 & 2 💳  - Sprint Goals](https://github.com/users/BrujoCervino/projects/1#card-40190169)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Notes](https://github.com/users/BrujoCervino/projects/1#column-9611790)|
+
 
 <br/>
+
+♦ **3: Fri, Jun 19**: Showed stakeholder my GUI, project management and code
+<br/>
+
+|Name|Moved From Column|Moved To Column|
+|----|-----------------|---------------|
+|[Project Management 💳 📚✨: Sprint 3 - Start](https://github.com/users/BrujoCervino/projects/1#card-40172042)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 3 💳 - User cannot submit until they have chosen the needed details 2 📅](https://github.com/users/BrujoCervino/projects/1#card-40356831)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 3 💳 - User cannot submit until they have chosen the needed details 1 📅](https://github.com/users/BrujoCervino/projects/1#card-40346811)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 3 💳 - Titles table Ⓜ️®️(💲)](https://github.com/users/BrujoCervino/projects/1#card-40316929)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 3 💳 - Finished Page Shows Application Success ✔️/❌](https://github.com/users/BrujoCervino/projects/1#card-40167618)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 3 💳 -  Applications table](https://github.com/users/BrujoCervino/projects/1#card-40316936)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 3 💳 - Empty Credit Check 💷](https://github.com/users/BrujoCervino/projects/1#card-40361850)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[ Project Management 💳 📚✨: Sprint 3 - End](https://github.com/users/BrujoCervino/projects/1#card-40172015)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Done](https://github.com/users/BrujoCervino/projects/1#column-9611771)|
+|[Sprint 3 💳 - Sprint Goals](https://github.com/users/BrujoCervino/projects/1#card-40287094)|[Review](https://github.com/users/BrujoCervino/projects/1#column-9611786)|[Notes](https://github.com/users/BrujoCervino/projects/1#column-9611790)|
 
 
 💳 **Sprint Retrospective**
@@ -89,6 +106,11 @@ I can receive my credit card
 ♣ *Learned*: How to make a new window, that tests for CRUD take longer to write than standard tests.<br/>
 ♣ *What I'll do differently next time*: Write more unit tests, write them earlier.<br/>
 <br/>
+♦ **3: Fri, Jun-19**: Happy I got user input validated, a working 'check failed' version of the 'accepted' window and have consistently kept my board well-organised<br/>
+♣ *Learned*: I should commit more regularly- intra-sprint-card commits are not a bad thing: better too many than none and an irretrievably broken project.<br/>
+♣ *What I'll do differently next time*: I was too ambitious in Sprint 3. I need to set more realistic goals next time - each project is another learning experience.<br/>
+<br/>
+
 💳 **Project Retrospective**
 
 *[Fill this out upon completion of the project]*

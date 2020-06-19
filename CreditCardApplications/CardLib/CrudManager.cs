@@ -13,8 +13,8 @@ namespace CrudOperations
         public readonly Applicant ApplicantData = new Applicant();
 
         // User makes a new application for a new card:
-        // Bill applies for an Amex Platinum card
-        public static void CreateEntry(in Titles title, in string firstName, in string middleName, in string surname, 
+        // E.g. Bill applies for an Amex Platinum card
+        public static void CreateApplication(in Titles title, in string firstName, in string middleName, in string surname, 
             in DateTime birthDate, in string email, in string mobileNum, in string homeTelephoneNum, 
             in decimal annualPersonalIncome, in decimal OtherHouseholdIncome) 
         {
@@ -36,7 +36,7 @@ namespace CrudOperations
             db.SaveChanges();
         }
 
-        public static List<Applicant> RetrieveAll() 
+        public static List<Applicant> RetrieveAllApplications() 
         {
             using var db = new CreditCardApplicationContext();
             return db.Applicants.ToList();
@@ -44,7 +44,7 @@ namespace CrudOperations
 
         // In terms of card application, 
         //  edit an entry due to incorrect data (incorrect income entered etc.)
-        public static void UpdateEntry(in Applicant applicantToUpdate) 
+        public static void UpdateApplication(in Applicant applicantToUpdate) 
         {
             using var db = new CreditCardApplicationContext();
             var applicant = db.Applicants
@@ -53,10 +53,11 @@ namespace CrudOperations
             applicant.Email = "janine@spleenmail.com";
 
             db.SaveChanges();
+            // #ToDo
 #warning Write a test for this^
         }
-        // In terms of card application, erase an entry due to a fraudulent application
-        public static void DeleteEntry(in Applicant applicant) 
+
+        public static void DeleteApplication(in Applicant applicant) 
         {
             using var db = new CreditCardApplicationContext();
             var applicants = db.Applicants.ToList(); // For comparison

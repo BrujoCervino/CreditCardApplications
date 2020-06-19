@@ -75,7 +75,7 @@ namespace CrudOperations
         protected override int GetMonthsSinceLastApplied(Applicant applicantToCheck)
         {
             throw new NotImplementedException();
-            ImmutableList<Applicant> applicants = CrudManager.RetrieveAll().ToImmutableList();
+            ImmutableList<Applicant> applicants = CrudManager.RetrieveAllApplications().ToImmutableList();
 
             // If this customer is valid and is already in our records,
             if (null != applicantToCheck

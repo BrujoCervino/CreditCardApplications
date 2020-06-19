@@ -69,7 +69,7 @@ namespace FrontEnd
             Titles title = (Titles)TitleComboBox.SelectedIndex;
 
             // Process the applicant's application
-            CrudManager.CreateEntry(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
+            CrudManager.CreateApplication(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
 
             CreditChecker creditChecker = new InternalCreditChecker();
             var approval = creditChecker.PerformCreditCheck(null);

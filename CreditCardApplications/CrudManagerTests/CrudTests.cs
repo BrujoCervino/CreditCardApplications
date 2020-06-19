@@ -18,11 +18,11 @@ namespace CrudOperationsTests
         [Test(Author = "K McEvaddy")]
         public void CrudManagerCanCreateValidEntry()
         {
-            List<Applicant> oldApplicants = CrudOperations.CrudManager.RetrieveAll();
-            CrudOperations.CrudManager.CreateEntry(Titles.Mr, "Harry", "James",
+            List<Applicant> oldApplicants = CrudOperations.CrudManager.RetrieveAllApplications();
+            CrudOperations.CrudManager.CreateApplication(Titles.Mr, "Harry", "James",
                 "Potter", new DateTime(2000, 12, 2), "harry.potter@mugglemail.com", "022222222222", "022222222222", 27_000, 9_999);
 
-            List<Applicant> currentApplicants = CrudOperations.CrudManager.RetrieveAll();
+            List<Applicant> currentApplicants = CrudOperations.CrudManager.RetrieveAllApplications();
 
             Assert.Greater(currentApplicants.Count, oldApplicants.Count);
         }
@@ -30,7 +30,7 @@ namespace CrudOperationsTests
         [Test(Author = "K McEvaddy")]
         public void CrudManagerCanReadValidEntry()
         {
-            List<Applicant> entries = CrudOperations.CrudManager.RetrieveAll();
+            List<Applicant> entries = CrudOperations.CrudManager.RetrieveAllApplications();
             Assert.NotNull(entries);
             Assert.Greater(entries.Count, 0);
         }
@@ -39,7 +39,7 @@ namespace CrudOperationsTests
         public void CrudManagerCanUpdateValidEntry()
         {
             // Get applicants
-            var oldApplicants = CrudManager.RetrieveAll();
+            var oldApplicants = CrudManager.RetrieveAllApplications();
             // Create new applicant
             var applicantToAdd = new Applicant()
             {
@@ -54,7 +54,7 @@ namespace CrudOperationsTests
                 HomeTelephoneNum = "00"
             };
             // Get applicant to edit
-            CrudManager.CreateEntry
+            CrudManager.CreateApplication
             (
                (Titles)applicantToAdd.TitleId,
                applicantToAdd.FirstName,
@@ -68,7 +68,7 @@ namespace CrudOperationsTests
                applicantToAdd.OtherHouseholdIncome
             );
             // Edit applicant
-            var currentApplicants = CrudManager.RetrieveAll();
+            var currentApplicants = CrudManager.RetrieveAllApplications();
             var applicantToEdit = currentApplicants.First(a => a.FirstName == "Brian" && a.Surname == "Griffin");
             // Get database again
             applicantToEdit.TitleId = (int)Titles.Mrs;
@@ -85,7 +85,7 @@ namespace CrudOperationsTests
         public void CrudManagerCanDeleteValidEntry()
         {
             // Get applicants
-            var oldApplicants = CrudManager.RetrieveAll();
+            var oldApplicants = CrudManager.RetrieveAllApplications();
             // Create new applicant
             var applicantToAdd = new Applicant()
             {
@@ -101,7 +101,7 @@ namespace CrudOperationsTests
             };
             // Get applicant to delete
             // Assume creation works via creation tests
-            CrudManager.CreateEntry
+            CrudManager.CreateApplication
             (
                (Titles)applicantToAdd.TitleId,
                applicantToAdd.FirstName,
@@ -115,12 +115,12 @@ namespace CrudOperationsTests
                applicantToAdd.OtherHouseholdIncome
             );
             // Edit applicant
-            var currentApplicants = CrudManager.RetrieveAll();
+            var currentApplicants = CrudManager.RetrieveAllApplications();
             Applicant applicantToDelete = currentApplicants.First(a => a.FirstName == "Brian" && a.Surname == "Griffin");
 
-            CrudManager.DeleteEntry(applicantToDelete);
+            CrudManager.DeleteApplication(applicantToDelete);
 
-            var finalApplicants = CrudManager.RetrieveAll();
+            var finalApplicants = CrudManager.RetrieveAllApplications();
 
             Assert.Greater(currentApplicants.Count, oldApplicants.Count);
             Assert.Greater(finalApplicants.Count, currentApplicants.Count);
