@@ -71,9 +71,9 @@ namespace FrontEnd
             // Process the applicant's application
             CrudManager.CreateEntry(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
 
-            // Credit check will happen here:
-            Random random = new Random();
-            bool accepted = random.Next(2) == 1; // Random num between 0 and 1
+            CreditChecker creditChecker = new InternalCreditChecker();
+            var approval = creditChecker.PerformCreditCheck(null);
+            bool accepted = approval.Approved;
 
             var acceptedWindow = new AcceptedWindow(accepted); // Make new window
             acceptedWindow.Show();

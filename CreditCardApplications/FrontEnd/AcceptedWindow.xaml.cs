@@ -17,7 +17,6 @@ namespace FrontEnd
     /// </summary>
     public partial class AcceptedWindow : Window
     {
-
         public AcceptedWindow(in bool approved = true)
         {
             InitializeComponent();

@@ -17,47 +17,52 @@ namespace CrudOperations
         // Returns the approval state (whether the application was approved and the limit given)
         public override CreditApproval PerformCreditCheck(in Applicant applicantToCheck)
         {
-            CreditApproval approval = null;
 
-            if (null != applicantToCheck)
+            return (new Random().Next(2) == 1) ? CreditApproval.Succeeded(2_000) : CreditApproval.Failed();
+            if (false)
             {
-                // Aproval details
-                decimal creditLimitToGive = decimal.MinValue;
-                bool approved = false;
+                CreditApproval approval = null;
 
-                // Credit check details
-                int monthsSinceLastApplication = GetMonthsSinceLastApplied(applicantToCheck);
-                decimal debtToIncomeRatio = GetDebtToIncomeRatio(applicantToCheck);
-                decimal creditUtilisation = GetCreditUtilisation(applicantToCheck);
-
-                // Evaluate how long ago the applicant last applied (if ever) 
-                //  (longer ago is better, because the applicant seems less desperate (more likely to pay on time))
-                // If has applied recently,
-                if (monthsSinceLastApplication < MinMonthsUntilCanReapply)
+                if (null != applicantToCheck)
                 {
+                    // Aproval details
+                    decimal creditLimitToGive = decimal.MinValue;
+                    bool approved = false;
 
-                } // If applied between 3 and 6 months ago,
-                else if (monthsSinceLastApplication >= MinMonthsUntilCanReapply && monthsSinceLastApplication < HealthyMonthsUntilCanReapply)
-                {
+                    // Credit check details
+                    int monthsSinceLastApplication = GetMonthsSinceLastApplied(applicantToCheck);
+                    decimal debtToIncomeRatio = GetDebtToIncomeRatio(applicantToCheck);
+                    decimal creditUtilisation = GetCreditUtilisation(applicantToCheck);
 
-                } // Else: applied longer than 6 months ago or never applied:
-                else
-                {
+                    // Evaluate how long ago the applicant last applied (if ever) 
+                    //  (longer ago is better, because the applicant seems less desperate (more likely to pay on time))
+                    // If has applied recently,
+                    if (monthsSinceLastApplication < MinMonthsUntilCanReapply)
+                    {
+
+                    } // If applied between 3 and 6 months ago,
+                    else if (monthsSinceLastApplication >= MinMonthsUntilCanReapply && monthsSinceLastApplication < HealthyMonthsUntilCanReapply)
+                    {
+
+                    } // Else: applied longer than 6 months ago or never applied:
+                    else
+                    {
+
+                    }
+
+                    // Evaluate how much total debt the applicant has compared to their total income:
+                    //  (less is better, because the applicant seems less desperate (more likely to pay on time))
+
+
+                    // Evaluate how much of the customer's credit limit (if they have any cards) they are using
+                    //  (less is better, because the applicant seems less desperate (more likely to pay on time))
+
+
+                    approval = approved ? CreditApproval.Succeeded(creditLimitToGive) : CreditApproval.Failed();
 
                 }
-
-                // Evaluate how much total debt the applicant has compared to their total income:
-                //  (less is better, because the applicant seems less desperate (more likely to pay on time))
-
-
-                // Evaluate how much of the customer's credit limit (if they have any cards) they are using
-                //  (less is better, because the applicant seems less desperate (more likely to pay on time))
-
-
-                approval = approved ? CreditApproval.Succeeded(creditLimitToGive) : CreditApproval.Failed();
-
+                return approval; 
             }
-            return approval;
         }
 
         // Returns the number of months since the applicant last applied
@@ -68,12 +73,12 @@ namespace CrudOperations
         {
             throw new NotImplementedException();
             ImmutableList<Applicant> applicants = CrudManager.RetrieveAll().ToImmutableList();
-            
+
             // If this customer is valid and is already in our records,
-            if (null != applicantToCheck 
-                && applicants != null 
+            if (null != applicantToCheck
+                && applicants != null
                 && applicants
-                .Exists(a => 
+                .Exists(a =>
                     a.TitleId == applicantToCheck.TitleId
                     && a.FirstName == applicantToCheck.FirstName
                     && a.MiddleName == applicantToCheck.MiddleName
