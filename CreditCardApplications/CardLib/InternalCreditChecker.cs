@@ -13,6 +13,9 @@ namespace CrudOperations
     // - Assumes the customer will only ever have/have had cards from the bank to which this credit checker belongs (they could be massively indebted to another bank)
     public class InternalCreditChecker : CreditChecker
     {
+#warning shorten this
+#warning make the other checks parameters
+
         // Checks the credit for the given applicant.
         // Returns the approval state (whether the application was approved and the limit given)
         public override CreditApproval PerformCreditCheck(in Applicant applicantToCheck)

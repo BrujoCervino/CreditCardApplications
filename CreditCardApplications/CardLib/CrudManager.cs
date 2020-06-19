@@ -46,26 +46,22 @@ namespace CrudOperations
         //  edit an entry due to incorrect data (incorrect income entered etc.)
         public static void UpdateEntry(in Applicant applicantToUpdate) 
         {
-            using(var db = new CreditCardApplicationContext())
-            {
-                var applicant = db.Applicants
-                    .First(a => a.Email == "janine@janinemail.com" && new DateTime(1905, 2, 08) == a.BirthDate);
+            using var db = new CreditCardApplicationContext();
+            var applicant = db.Applicants
+                .First(a => a.Email == "janine@janinemail.com" && new DateTime(1905, 2, 08) == a.BirthDate);
 
-                applicant.Email = "janine@spleenmail.com";
+            applicant.Email = "janine@spleenmail.com";
 
-                db.SaveChanges();
+            db.SaveChanges();
 #warning Write a test for this^
-            }
         }
         // In terms of card application, erase an entry due to a fraudulent application
-        public static void DeleteEntry() 
+        public static void DeleteEntry(in Applicant applicant) 
         {
             using var db = new CreditCardApplicationContext();
             var applicants = db.Applicants.ToList(); // For comparison
 
-            var firstToDelete = db.Applicants.FirstOrDefault();
-
-            db.Applicants.Remove(firstToDelete);
+            db.Applicants.Remove(applicant);
             db.SaveChanges();
 #warning Write a test for this^
         }

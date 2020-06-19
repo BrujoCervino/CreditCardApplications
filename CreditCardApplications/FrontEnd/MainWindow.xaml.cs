@@ -51,7 +51,7 @@ namespace FrontEnd
         private void SaveAndContinueButton_Click(object sender, RoutedEventArgs e)
         {
             // Don't allow the user to submit their application until these are valid:
-            // Title, First Name, Surname, Email
+            // Title, First Name, Surname, Email, Year, Month
             if (!TitleBoxIsValid()
                 || !TextEntryIsValid(FirstNameTextEntry)
                 || !TextEntryIsValid(SurnameTextEntry)

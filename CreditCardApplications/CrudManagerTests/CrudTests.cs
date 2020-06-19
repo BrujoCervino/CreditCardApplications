@@ -38,14 +38,8 @@ namespace CrudOperationsTests
         [Test(Author = "K McEvaddy")]
         public void CrudManagerCanUpdateValidEntry()
         {
-
-        }
-
-        [Test(Author = "K McEvaddy")]
-        public void CrudManagerCanDeleteValidEntry()
-        {
             // Get applicants
-            var oldApplicants = CrudOperations.CrudManager.RetrieveAll();
+            var oldApplicants = CrudManager.RetrieveAll();
             // Create new applicant
             var applicantToAdd = new Applicant()
             {
@@ -60,7 +54,7 @@ namespace CrudOperationsTests
                 HomeTelephoneNum = "00"
             };
             // Get applicant to edit
-            CrudOperations.CrudManager.CreateEntry
+            CrudManager.CreateEntry
             (
                (Titles)applicantToAdd.TitleId,
                applicantToAdd.FirstName,
@@ -74,7 +68,7 @@ namespace CrudOperationsTests
                applicantToAdd.OtherHouseholdIncome
             );
             // Edit applicant
-            var currentApplicants = CrudOperations.CrudManager.RetrieveAll();
+            var currentApplicants = CrudManager.RetrieveAll();
             var applicantToEdit = currentApplicants.First(a => a.FirstName == "Brian" && a.Surname == "Griffin");
             // Get database again
             applicantToEdit.TitleId = (int)Titles.Mrs;
@@ -85,6 +79,53 @@ namespace CrudOperationsTests
 
             //Assert.AreNotEqual();
             Assert.Fail();
+        }
+
+        [Test(Author = "K McEvaddy")]
+        public void CrudManagerCanDeleteValidEntry()
+        {
+            // Get applicants
+            var oldApplicants = CrudManager.RetrieveAll();
+            // Create new applicant
+            var applicantToAdd = new Applicant()
+            {
+                TitleId = (int)Titles.Mr,
+                FirstName = "Brian",
+                Surname = "Griffin",
+                Email = "brian@writernet.com",
+                BirthDate = new DateTime(2000, 12, 20),
+                MobileNum = "00",
+                AnnualPersonalIncome = 25_000,
+                OtherHouseholdIncome = 1_000,
+                HomeTelephoneNum = "00"
+            };
+            // Get applicant to delete
+            // Assume creation works via creation tests
+            CrudManager.CreateEntry
+            (
+               (Titles)applicantToAdd.TitleId,
+               applicantToAdd.FirstName,
+               null,
+               applicantToAdd.Surname,
+               applicantToAdd.BirthDate,
+               applicantToAdd.Email,
+               applicantToAdd.MobileNum,
+               applicantToAdd.HomeTelephoneNum,
+               applicantToAdd.AnnualPersonalIncome,
+               applicantToAdd.OtherHouseholdIncome
+            );
+            // Edit applicant
+            var currentApplicants = CrudManager.RetrieveAll();
+            Applicant applicantToDelete = currentApplicants.First(a => a.FirstName == "Brian" && a.Surname == "Griffin");
+
+            CrudManager.DeleteEntry(applicantToDelete);
+
+            var finalApplicants = CrudManager.RetrieveAll();
+
+            Assert.Greater(currentApplicants.Count, oldApplicants.Count);
+            Assert.Greater(finalApplicants.Count, currentApplicants.Count);
+            Assert.Contains(applicantToAdd, currentApplicants);
+            Assert.False(finalApplicants.Contains(applicantToAdd));
         }
     }
 }
