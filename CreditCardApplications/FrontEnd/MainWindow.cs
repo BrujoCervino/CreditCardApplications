@@ -63,7 +63,8 @@ namespace FrontEnd
 
             // Populate the birthday dropdown as either "DD" 
             //  or between 01 and 31 inclusive
-            object[] days = new object[31];
+#warning Limitation: max is 28 right now, because having problems. 
+            object[] days = new object[28];
             for (int index = 0, element = 1; index < days.Length; ++index, ++element)
             {
                 stringBuilder.Clear();
@@ -127,7 +128,7 @@ namespace FrontEnd
 
             // Parse the birthdate
             string stringifiedBirthdate = $"{day}/{month}/{year}";
-            return DateTime.Parse(stringifiedBirthdate);
+            return DateTime.Parse(stringifiedBirthdate); 
         }
     }
 }

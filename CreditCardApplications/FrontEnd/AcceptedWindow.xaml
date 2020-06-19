@@ -7,18 +7,24 @@
         mc:Ignorable="d"
         Title="AcceptedWindow" Height="450" Width="800">
     <Grid x:Name="MyGrid">
-        <Image x:Name="BackgroundImage" Width="1200" Height="487.5" Margin="-200,-60,0,0" Source="/AXP_World_Service.png"/> <!--Bad practice: overdraw. This image may need to be cut.-->
+        <Image x:Name="BackgroundImage" Margin="-100,-30,-100,-30" Source="/AXP_World_Service.png"/> <!--Bad practice: overdraw. This image may need to be cut.-->
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
+
             </Grid.RowDefinitions>
 
-            <Image x:Name="CardImage" Grid.Row="0" Width="300" Height="200" Source="/UK_AXP_Preferred_Rewards_Gold_Card.png"/>
+            <Image x:Name="CardImage" Grid.Row="0" Source="/UK_AXP_Preferred_Rewards_Gold_Card.png"/>
 
-            <TextBlock Grid.Row="1" Text="You were accepted!" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
-            <TextBlock Grid.Row="1" Text="Your card will arrive in 7-10 working days" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White" Margin="0,140,0,0"/>
-
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="ApprovalHeading" Grid.Row="0" Text="You were accepted!" FontSize="36" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"/>
+                <TextBlock x:Name="ApprovalSubheading" Grid.Row="1" Text="Your card will arrive in 7-10 working days" FontSize="20" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White"/>
+            </Grid>
         </Grid>
 
     </Grid>

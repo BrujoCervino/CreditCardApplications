@@ -17,10 +17,15 @@ namespace FrontEnd
     /// </summary>
     public partial class AcceptedWindow : Window
     {
-        public AcceptedWindow()
+
+        public AcceptedWindow(in bool approved = true)
         {
             InitializeComponent();
-
+            if(!approved)
+            {
+                ApprovalHeading.Text = "We're sorry: your application was unsuccessful";
+                ApprovalSubheading.Text = "You can apply again 3 months from now";
+            }
         }
     }
 }

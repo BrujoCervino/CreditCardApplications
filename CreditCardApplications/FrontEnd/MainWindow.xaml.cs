@@ -71,7 +71,11 @@ namespace FrontEnd
             // Process the applicant's application
             CrudManager.CreateEntry(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
 
-            var acceptedWindow = new AcceptedWindow(); // Make new window
+            // Credit check will happen here:
+            Random random = new Random();
+            bool accepted = random.Next(2) == 1; // Random num between 0 and 1
+
+            var acceptedWindow = new AcceptedWindow(accepted); // Make new window
             acceptedWindow.Show();
             acceptedWindow.Focus();
             Close(); // Close current window
@@ -119,27 +123,32 @@ namespace FrontEnd
             ComboBox comboBox = (ComboBox)sender;
 
 #warning Change this function so that the number of days shown in the day box depends on the months box and whether the year is a leap year
-            switch (comboBox.Uid) // Todo: change this to an if statement instead
-            {
-                ////Commented out because it throws an exception. Fix soon:
-                // case "Year": break;
-                // case "Month": 
-                //     var month = (comboBox.SelectedItem != MonthsTitle) 
-                //         ? (int)comboBox.SelectedItem
-                //         : (int)Months.January; // January has 31 days
-                //     
-                //     int year = (YearComboBox.SelectedItem.ToString() != YearsTitle)
-                //         ? (int)YearComboBox.SelectedItem
-                //         : DateTime.Now.Year;
-                //
-                //     if (DayComboBox != null && DayComboBox.Items != null && DayComboBox.Items.Count > 0)
-                //     {
-                //         DayComboBox.Items[DayComboBox.Items.Count - 1] = GetNumDaysInMonth(month, year);  
-                //     }
-                //     break;
-                // case "Day": break;
-                // default: break;
-            }
+            //switch (comboBox.Uid) // Todo: change this to an if statement instead
+            //{
+            //    //Commented out because it throws an exception. Fix soon:
+            //    case "Year": break;
+            //    case "Month": 
+            //        var month = (comboBox.SelectedItem != MonthsTitle) 
+            //            ? comboBox.SelectedIndex
+            //            : (int)Months.January; // January has 31 days
+            //        
+            //        int year = (YearComboBox.SelectedItem.ToString() != YearsTitle)
+            //            ? (int)YearComboBox.SelectedItem
+            //            : DateTime.Now.Year;
+            //    
+            //        if (DayComboBox != null && DayComboBox.Items != null && DayComboBox.Items.Count > 0)
+            //        {
+            //            int numDays = GetNumDaysInMonth(month, year);
+            //            DayComboBox.Items.Clear();
+            //            for(int i = 0; i < DaysList.Count; ++i)
+            //            {
+            //                DayComboBox.Items.Add(DaysList[i]);
+            //            }
+            //        }
+            //        break;
+            //    case "Day": break;
+            //    default: break;
+            //}
         }
 
         protected int GetNumDaysInMonth(in int month, in int year)
