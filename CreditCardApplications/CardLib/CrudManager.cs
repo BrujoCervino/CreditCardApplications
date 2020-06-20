@@ -46,30 +46,30 @@ namespace CrudOperations
 
         public static bool UpdateApplication(Applicant currentApplicant, in Applicant updatedApplicant) 
         {
+            // Connect to database
             using var db = new CreditCardApplicationContext();
-            //var applicant = db.Applicants
-            //    .First(a => a.Email == "janine@janinemail.com" && new DateTime(1905, 2, 08) == a.BirthDate);
-            var applicants = RetrieveAllApplications();
+            // Update if needed
+            List<Applicant> applicants = RetrieveAllApplications();
             int index = applicants.IndexOf(currentApplicant);
             if( index >= 0)
             {
                 currentApplicant = applicants[index];
-                if (currentApplicant.OverwriteIfDifferentAndValid(updatedApplicant))
+                if (currentApplicant.OverwriteIfDifferentAndValidExceptId(updatedApplicant))
                 {
                     db.SaveChanges();
                     return true;
                 }
             }
             return false;
-            //applicant.Email = "janine@spleenmail.com";
-#warning Write a test for this^
         }
 
         public static void DeleteApplication(in Applicant applicant) 
         {
+            // Connect to database
             using var db = new CreditCardApplicationContext();
-            var applicants = db.Applicants.ToList();
-
+            // Get applicants
+            List<Applicant> applicants = db.Applicants.ToList();
+            // Delete applicant
             db.Applicants.Remove(applicant);
             db.SaveChanges();
 #warning Write a test for this^

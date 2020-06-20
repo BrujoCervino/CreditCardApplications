@@ -33,7 +33,7 @@ namespace DatabaseBackEnd
         }
 
         // Very ugly but it works. I'd do this with reflection next time (via an array of properties).
-        public bool OverwriteIfDifferentAndValid(in Applicant newApplicant)
+        public bool OverwriteIfDifferentAndValidExceptId(in Applicant newApplicant)
         {
             bool anythingChanged = false;
             if(TitleId != newApplicant.TitleId && ((int[])Enum.GetValues(typeof(Titles))).Contains(newApplicant.TitleId))

@@ -48,20 +48,32 @@ namespace CrudOperationsTests
             );
         }
 
-        [Test(Author = "K McEvaddy")]
-        public void CrudManagerCanCreateAndDeleteValidApplicant()
+        [Author("K McEvaddy")]
+        [Ignore(reason: "Helper method")]
+        public bool DeleteFromDatabase(List<Applicant> applicantsToDelete)
         {
-            throw new NotImplementedException();
+            if(null != applicantsToDelete && applicantsToDelete.Count > 0)
+            {
+                foreach(Applicant a in applicantsToDelete)
+                {
+                    if(null != a)
+                    {
+                        CrudManager.DeleteApplication(a);
+                    }
+                }
+                return true;
+            }
+            return false;
         }
 
         [Test(Author = "K McEvaddy")]
         public void CrudManagerCanCreateValidApplication()
         {
             // Old
-            var oldApplicantsCount = CrudManager.RetrieveAllApplications().Count;
+            int oldApplicantsCount = CrudManager.RetrieveAllApplications().Count;
             // Current
-            var applicantAdded = CreateApplication();
-            var currentApplicantsCount = CrudManager.RetrieveAllApplications().Count;
+            Applicant applicantAdded = CreateApplication();
+            int currentApplicantsCount = CrudManager.RetrieveAllApplications().Count;
             // Assertions
             Assert.AreEqual(ApplicantToTest, applicantAdded);
             Assert.Greater(currentApplicantsCount, oldApplicantsCount);
@@ -90,9 +102,9 @@ namespace CrudOperationsTests
             applicantToEdit.Surname = "Thurman";
             CrudManager.UpdateApplication(oldApplicant, applicantToEdit);
             // Final
-            var finalApplicants = CrudManager.RetrieveAllApplications();
+            List<Applicant> finalApplicants = CrudManager.RetrieveAllApplications();
             int finalCount = finalApplicants.Count;
-            Applicant finalApplicant = null; ;
+            Applicant finalApplicant = null; 
             // Pre-assertions
             Assert.DoesNotThrow
             (
@@ -105,9 +117,47 @@ namespace CrudOperationsTests
         }
 
         [Test(Author = "K McEvaddy")]
+        public void CrudManagerCanDeleteValidEntry_Backup()
+        {
+            // Old
+            int oldCount = CrudManager.RetrieveAllApplications().Count;
+            // Current
+            Applicant applicant = CreateApplication();
+            int currentCount = CrudManager.RetrieveAllApplications().Count;
+            // Final
+            CrudManager.DeleteApplication(applicant);
+            var finalApplicants = CrudManager.RetrieveAllApplications();
+            int finalCount = finalApplicants.Count;
+            Applicant finalApplicant = null;
+            // Pre-assertions
+            TestDelegate result = () => finalApplicant = finalApplicants.First(a => a.Equals(applicant));
+            Assert.Throws<InvalidOperationException>(result);
+            // Assertions
+            Assert.Less(oldCount, currentCount);
+            Assert.Less(finalCount, currentCount);
+        }
+
+        [Test(Author = "K McEvaddy")]
         public void CrudManagerCanDeleteValidEntry()
         {
-            throw new NotImplementedException();
+            // Old
+            int oldCount = CrudManager.RetrieveAllApplications().Count;
+            // Current
+            Applicant applicant = CreateApplication();
+            int currentCount = CrudManager.RetrieveAllApplications().Count;
+            // GET APPLICANT FROM THE DATABASE TO GET ITS KEY THEN DELETE (AVOIDS EXCEPTIONS)
+
+            // Final
+            CrudManager.DeleteApplication(applicant);
+            var finalApplicants = CrudManager.RetrieveAllApplications();
+            int finalCount = finalApplicants.Count;
+            Applicant finalApplicant = null;
+            // Pre-assertions
+            TestDelegate result = () => finalApplicant = finalApplicants.First(a => a.Equals(applicant));
+            Assert.Throws<InvalidOperationException>(result);
+            // Assertions
+            Assert.Less(oldCount, currentCount);
+            Assert.Less(finalCount, currentCount);
         }
     }
 }
