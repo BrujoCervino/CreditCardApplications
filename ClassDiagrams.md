@@ -1,5 +1,7 @@
 ﻿# Class Diagrams
 
+**Please find class diagrams via the links below.<br/> 
+(For best results, click these links inside Visual Studio to immediately view files in the correct format).**
 
 ## ~ ***Main Projects*** ~
 
