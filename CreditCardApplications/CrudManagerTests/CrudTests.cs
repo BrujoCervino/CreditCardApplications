@@ -1,7 +1,6 @@
 using CrudOperations;
 using DatabaseBackEnd;
 using Globals.Enums;
-using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;

@@ -1,11 +1,11 @@
-﻿using Globals.Enums;
-using DatabaseBackEnd;
-using System;
-using System.Linq;
-using System.Collections.Generic;
+﻿using DatabaseBackEnd;
+using Globals.Enums;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace CrudOperations 
+namespace CrudOperations
 {
 #warning it may be worth having a wrapper class for this: create entry is not the most descriptive term. Better would be CreditApplications.Apply(Applicant a)
     public class CrudManager

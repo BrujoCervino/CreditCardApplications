@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace CrudOperations 
+namespace CrudOperations
 {
     // The data passed around for credit limit given and whether the application succeeded.
     // Used Factory Pattern for clarity and simplicity:

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Globals.Enums
+﻿namespace Globals.Enums
 {
     // Has to remain simple in order to not conflict with previous credit checks.
     // Titles like doctor/esquire/professor 

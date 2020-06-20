@@ -1,9 +1,6 @@
 ﻿using DatabaseBackEnd;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace CrudOperations 
+namespace CrudOperations
 {
     public abstract class CreditChecker
     {
