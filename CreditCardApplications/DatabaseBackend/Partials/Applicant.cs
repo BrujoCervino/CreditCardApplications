@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Globals.Enums;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DatabaseBackEnd
@@ -12,6 +14,7 @@ namespace DatabaseBackEnd
     
     public partial class Applicant : IMemberwiseCloneable<Applicant>
     {
+        // Could not call the protected method "memberwiseclone" because I want applicantId to not carry over between clones
         public Applicant CreateMemberwiseClone()
         {
             return new Applicant
@@ -27,6 +30,63 @@ namespace DatabaseBackEnd
                 AnnualPersonalIncome = this.AnnualPersonalIncome,
                 OtherHouseholdIncome = this.OtherHouseholdIncome
             };
+        }
+
+        // Very ugly but it works. I'd do this with reflection next time (via an array of properties).
+        public bool OverwriteIfDifferentAndValid(in Applicant newApplicant)
+        {
+            bool anythingChanged = false;
+            if(TitleId != newApplicant.TitleId && ((int[])Enum.GetValues(typeof(Titles))).Contains(newApplicant.TitleId))
+            {
+                TitleId = newApplicant.TitleId;
+                anythingChanged = true;
+            }
+            if(FirstName != newApplicant.FirstName && null != newApplicant.FirstName)
+            {
+                FirstName = newApplicant.FirstName;
+                anythingChanged = true;
+            }
+            if (MiddleName != newApplicant.MiddleName && null != newApplicant.MiddleName)
+            {
+                MiddleName = newApplicant.MiddleName;
+                anythingChanged = true;
+            }
+            if (Surname != newApplicant.Surname && null != newApplicant.Surname)
+            {
+                Surname = newApplicant.Surname;
+                anythingChanged = true;
+            }
+            if(BirthDate != newApplicant.BirthDate)
+            {
+                BirthDate = newApplicant.BirthDate;
+                anythingChanged = true;
+            }
+            if (Email != newApplicant.Email && null != newApplicant.Email)
+            {
+                Email = newApplicant.Email;
+                anythingChanged = true;
+            }
+            if (MobileNum != newApplicant.MobileNum && null != newApplicant.MobileNum)
+            {
+                MobileNum = newApplicant.MobileNum;
+                anythingChanged = true;
+            }
+            if (HomeTelephoneNum != newApplicant.HomeTelephoneNum && null != newApplicant.HomeTelephoneNum)
+            {
+                HomeTelephoneNum = newApplicant.HomeTelephoneNum;
+                anythingChanged = true;
+            }
+            if (AnnualPersonalIncome != newApplicant.AnnualPersonalIncome)
+            {
+                AnnualPersonalIncome = newApplicant.AnnualPersonalIncome;
+                anythingChanged = true;
+            }
+            if (OtherHouseholdIncome != newApplicant.OtherHouseholdIncome)
+            {
+                OtherHouseholdIncome = newApplicant.OtherHouseholdIncome; 
+                anythingChanged = true;
+            }
+            return anythingChanged;
         }
 
         public override bool Equals(object obj)

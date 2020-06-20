@@ -44,15 +44,24 @@ namespace CrudOperations
             return db.Applicants.ToList();
         }
 
-        public static void UpdateApplication(in Applicant currentApplicant, in Applicant updatedApplicant) 
+        public static bool UpdateApplication(Applicant currentApplicant, in Applicant updatedApplicant) 
         {
             using var db = new CreditCardApplicationContext();
-            var applicant = db.Applicants
-                .First(a => a.Email == "janine@janinemail.com" && new DateTime(1905, 2, 08) == a.BirthDate);
-
-            applicant.Email = "janine@spleenmail.com";
-
-            db.SaveChanges();
+            //var applicant = db.Applicants
+            //    .First(a => a.Email == "janine@janinemail.com" && new DateTime(1905, 2, 08) == a.BirthDate);
+            var applicants = RetrieveAllApplications();
+            int index = applicants.IndexOf(currentApplicant);
+            if( index >= 0)
+            {
+                currentApplicant = applicants[index];
+                if (currentApplicant.OverwriteIfDifferentAndValid(updatedApplicant))
+                {
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            return false;
+            //applicant.Email = "janine@spleenmail.com";
 #warning Write a test for this^
         }
 

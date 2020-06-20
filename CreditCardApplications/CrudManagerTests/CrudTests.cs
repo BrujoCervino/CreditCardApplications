@@ -55,7 +55,7 @@ namespace CrudOperationsTests
         }
 
         [Test(Author = "K McEvaddy")]
-        public void CrudManagerCanCreateValidApplicant()
+        public void CrudManagerCanCreateValidApplication()
         {
             // Old
             var oldApplicantsCount = CrudManager.RetrieveAllApplications().Count;
@@ -78,67 +78,36 @@ namespace CrudOperationsTests
         }
 
         [Test(Author = "K McEvaddy")]
-        public void CrudManagerCanUpdateValidEntry()
+        public void CrudManagerCanUpdateValidApplication()
         {
             // Old
-            var oldApplicant = CreateApplication();
+            Applicant oldApplicant = CreateApplication();
             int oldCount = CrudManager.RetrieveAllApplications().Count;
             // Current
-            var applicantToEdit = oldApplicant.CreateMemberwiseClone();
+            Applicant applicantToEdit = oldApplicant.CreateMemberwiseClone();
             applicantToEdit.FirstName = "Uma";
             applicantToEdit.MiddleName = "Karuna";
             applicantToEdit.Surname = "Thurman";
-            // Final
             CrudManager.UpdateApplication(oldApplicant, applicantToEdit);
+            // Final
+            var finalApplicants = CrudManager.RetrieveAllApplications();
+            int finalCount = finalApplicants.Count;
+            Applicant finalApplicant = null; ;
+            // Pre-assertions
+            Assert.DoesNotThrow
+            (
+                () => finalApplicant = finalApplicants.First(a => a.Equals(applicantToEdit))
+            );
             // Assertions
-            //Assert.AreEqual(preupdatedCount, updatedCount);
+            Assert.AreEqual(finalCount, oldCount);
+            Assert.AreNotEqual(oldApplicant, finalApplicant);
+            Assert.AreEqual(applicantToEdit, finalApplicant);
         }
 
         [Test(Author = "K McEvaddy")]
         public void CrudManagerCanDeleteValidEntry()
         {
-            // Get applicants
-            var oldApplicants = CrudManager.RetrieveAllApplications();
-            // Create new applicant
-            var applicantToAdd = new Applicant()
-            {
-                TitleId = (int)Titles.Mr,
-                FirstName = "Brian",
-                Surname = "Griffin",
-                Email = "brian@writernet.com",
-                BirthDate = new DateTime(2000, 12, 20),
-                MobileNum = "00",
-                AnnualPersonalIncome = 25_000,
-                OtherHouseholdIncome = 1_000,
-                HomeTelephoneNum = "00"
-            };
-            // Get applicant to delete
-            // Assume creation works via creation tests
-            CrudManager.CreateApplication
-            (
-               (Titles)applicantToAdd.TitleId,
-               applicantToAdd.FirstName,
-               null,
-               applicantToAdd.Surname,
-               applicantToAdd.BirthDate,
-               applicantToAdd.Email,
-               applicantToAdd.MobileNum,
-               applicantToAdd.HomeTelephoneNum,
-               applicantToAdd.AnnualPersonalIncome,
-               applicantToAdd.OtherHouseholdIncome
-            );
-            // Edit applicant
-            var currentApplicants = CrudManager.RetrieveAllApplications();
-            Applicant applicantToDelete = currentApplicants.First(a => a.FirstName == "Brian" && a.Surname == "Griffin");
-
-            CrudManager.DeleteApplication(applicantToDelete);
-
-            var finalApplicants = CrudManager.RetrieveAllApplications();
-
-            Assert.Greater(currentApplicants.Count, oldApplicants.Count);
-            Assert.Greater(finalApplicants.Count, currentApplicants.Count);
-            Assert.Contains(applicantToAdd, currentApplicants);
-            Assert.False(finalApplicants.Contains(applicantToAdd));
+            throw new NotImplementedException();
         }
     }
 }
