@@ -25,8 +25,7 @@ A GUI application in which the user can apply for a new credit card like [applyi
 
 💳 [**Sprint 4 Goals**](https://github.com/users/BrujoCervino/projects/1#card-40438537)
 
-💳 **[Project Definition of Done](https://github.com/users/BrujoCervino/projects/1#card-40161516)**:
-<br/>(See link above)
+💳 **[Project Definition of Done](https://github.com/users/BrujoCervino/projects/1#card-40161516)**
 
 💳 **[Generic User Story Definition of Done](https://github.com/users/BrujoCervino/projects/1#card-40170129)**
 ```
@@ -53,7 +52,7 @@ I can receive my credit card
 
 |Sprint|Timeframe|Done?|Screenshot Start [Files](https://github.com/BrujoCervino/CreditCardApplications/tree/master/SprintScreenshots)|Screenshot End [Files](https://github.com/BrujoCervino/CreditCardApplications/tree/master/SprintScreenshots)
 |------|-----------------------------|---|--|--|
-|0 (***Meta-sprint***)    |Weekend         |✅|[*Unnecessary*]|[<img src="SprintScreenshots/Sprint0_Board.png" alt="Sprint 0 picture" width="250"/>](SprintScreenshots/Sprint0_Board.png)|
+|0 (***Meta-sprint***)    |Weekend         |✅|[*Unnecessary*]|[<img src="SprintScreenshots/Sprint0_Board_End.png" alt="Sprint 0 picture" width="250"/>](SprintScreenshots/Sprint0_Board_End.png)|
 |1     |Monday - Early Tuesday       |✅|[<img src="SprintScreenshots/Sprint1_Board_Start.png" alt="Sprint 1 Start" width="250"/>](SprintScreenshots/Sprint1_Board_Start.png)|[<img src="SprintScreenshots/Sprint1_Board_End.png" alt="Sprint 1 End" width="250"/>](SprintScreenshots/Sprint1_Board_End.png)|
 |2     |Late Tuesday - Early Thursday|✅|[<img src="SprintScreenshots/Sprint2_Board_Start.png" alt="Sprint 2 Start" width="250"/>](SprintScreenshots/Sprint2_Board_Start.png)|[<img src="SprintScreenshots/Sprint2_Board_End.png" alt="Sprint 2 End" width="250"/>](SprintScreenshots/Sprint2_Board_End.png)|
 |3     |Late Thursday - Early Friday |✅|[<img src="SprintScreenshots/Sprint3_Board_Start.png" alt="Sprint 3 Start" width="250"/>](SprintScreenshots/Sprint3_Board_Start.png)|[<img src="SprintScreenshots/Sprint3_Board_End.png" alt="Sprint 3 End" width="250"/>](SprintScreenshots/Sprint3_Board_End.png)|
