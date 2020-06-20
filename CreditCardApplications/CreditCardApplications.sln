@@ -17,13 +17,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globals", "CreditCardApplic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{676FEDBE-3943-4D4A-AA5F-A22444BFEA7E}"
 	ProjectSection(SolutionItems) = preProject
+		..\ClassDiagrams.md = ..\ClassDiagrams.md
 		..\MarkdownCheatsheet.md = ..\MarkdownCheatsheet.md
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudOperationsTests", "CrudManagerTests\CrudOperationsTests.csproj", "{9F91FEC0-0402-4E4D-ACEC-4526808E351A}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClassDiagrams", "ClassDiagrams", "{99F76456-174C-4093-8355-4BAD4C8AA4D9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontEnd", "FrontEnd\FrontEnd.csproj", "{DBD897CB-CC88-4566-99DD-1C8E38EA7ADE}"
 EndProject

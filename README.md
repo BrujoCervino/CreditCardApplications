@@ -133,5 +133,5 @@ I can receive my credit card
 
 ### Class Diagrams
 
-Find class diagrams within [the class diagrams folder](https://github.com/BrujoCervino/CreditCardApplications/tree/master/ClassDiagrams).
+Find class diagrams via [the class diagrams page](ClassDiagrams.md).
 

@@ -43,7 +43,6 @@ namespace CrudOperationsTests
                 AnnualPersonalIncome = 100_000,
                 OtherHouseholdIncome = 10_000
             };
-
         }
 
         [Author("K McEvaddy")]

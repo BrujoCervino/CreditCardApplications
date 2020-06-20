@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DatabaseBackEnd.Migrations.InitialCreate">
+    <Position X="6" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAI=</HashCode>
+      <FileName>Migrations\20200616172623_InitialCreate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DatabaseBackEnd.Migrations.ModelModelSnapshot">
+    <Position X="6.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Migrations\ModelModelSnapshot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DatabaseBackEnd.Applicant" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="2.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABEAAACAAAAQEgAASAAQABAAAQIABAAAAAgQEAAA=</HashCode>
+      <FileName>Partials\Applicant.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DatabaseBackEnd.CreditCardApplicationContext">
+    <Position X="9.25" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Applicants" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Microsoft.EntityFrameworkCore.DbSet&lt;TEntity&gt;">
+    <Position X="13" Y="0.75" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="DatabaseBackEnd.Interfaces.IMemberwiseCloneable&lt;TCloneType&gt;">
+    <Position X="5.25" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\Applicant.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

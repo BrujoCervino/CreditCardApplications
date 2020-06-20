@@ -6,13 +6,16 @@ using System.Text;
 
 namespace DatabaseBackEnd
 {
-    // Explicitly shallow clone: clearer than native ICloneable (which produces ambiguously deep or shallow copies)
-    public interface IMemberwiseCloneable<TCloneType>
+    namespace Interfaces
     {
-        TCloneType CreateMemberwiseClone();
+        // Explicitly shallow clone: clearer than native ICloneable (which produces ambiguously deep or shallow copies)
+        public interface IMemberwiseCloneable<TCloneType>
+        {
+            TCloneType CreateMemberwiseClone();
+        } 
     }
     
-    public partial class Applicant : IMemberwiseCloneable<Applicant>
+    public partial class Applicant : Interfaces.IMemberwiseCloneable<Applicant>
     {
         // Could not call the protected method "memberwiseclone" because I want applicantId to not carry over between clones
         public Applicant CreateMemberwiseClone()

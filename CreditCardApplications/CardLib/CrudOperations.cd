@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CrudOperations.CreditApproval">
+    <Position X="5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAABAAAAAAAAAAAAAAAAAAAABAAABAAAIA=</HashCode>
+      <FileName>CreditApproval.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrudOperations.CreditChecker">
+    <Position X="1.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEgAACAAAQAAAAQAAAAAAAAAAAAAAAAAAAEAAAQIAEA=</HashCode>
+      <FileName>CreditChecker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrudOperations.CrudManager">
+    <Position X="5.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>QACAAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>CrudManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CrudOperations.InternalCreditChecker">
+    <Position X="1" Y="4" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AEAAACAAAAAAAAQAAAAAAAAAAAAAAAAAAAEAAAQIAAA=</HashCode>
+      <FileName>InternalCreditChecker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

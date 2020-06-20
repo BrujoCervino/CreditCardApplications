@@ -117,7 +117,15 @@ namespace CrudOperations
         // Returns whether the applicant is (MinAgeUntilCanApply) years old or over
         protected override bool ApplicantIsOldEnoughToApplyForACard(in Applicant applicantToCheck)
         {
-            throw new NotImplementedException();
+            DateTime date = applicantToCheck.BirthDate;
+            DateTime now = DateTime.Now;
+
+            int age = 
+                (now.DayOfYear > date.DayOfYear)
+                    ? now.Year - date.Year
+                    : (now.Year - date.Year) - 1;
+
+            return age >= MinAgeUntilCanApply;
         }
     }
 }
