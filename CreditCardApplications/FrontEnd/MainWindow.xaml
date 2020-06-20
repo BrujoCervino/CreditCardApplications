@@ -68,6 +68,7 @@
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
+                        
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
@@ -128,12 +129,17 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition x:Name="BirthDateSection"></ColumnDefinition>
                             <ColumnDefinition x:Name="MiddleNaaaameTextEntrySection"></ColumnDefinition>
+                            <ColumnDefinition x:Name="YearColumn"/>
                         </Grid.ColumnDefinitions>
 
                         <Grid.RowDefinitions>
                             <RowDefinition x:Name="SurnameTextSection"></RowDefinition>
                             <RowDefinition x:Name="SurnameTextEntrySection"></RowDefinition>
                         </Grid.RowDefinitions>
+                        <ComboBox x:Uid="Day" x:Name="DayComboBox" Grid.Column="0" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Margin="0,18,5,0" Grid.RowSpan="2"/>
+                        <ComboBox x:Uid="Month" x:Name="MonthComboBox" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Margin="5,18,5,0" Grid.RowSpan="2" Grid.Column="1"/>
+                        <ComboBox x:Uid="Year" x:Name="YearComboBox" Grid.Column="2" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Margin="5,18,10,0" Grid.RowSpan="2"/>
+                        <TextBlock x:Name="BirthdateText" Grid.Row="0" FontSize="10" Grid.Column="0" Margin="0,0,65,0" ><Run Foreground="Red" Text="*"/><Run Text=" "/><Run Text="Date of Birth"/></TextBlock>
                     </Grid>
 
                     <Grid Grid.Row="4">
@@ -150,11 +156,6 @@
                         </Grid.RowDefinitions>
                         <Separator Margin="0,11,10,-7" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
                         <TextBlock x:Name="ContactDetailsText" Text="CONTACT DETAILS" FontWeight="Bold" Foreground="SlateGray" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="0,11,0,0"/>
-                        <TextBlock x:Name="BirthdateText" Grid.Row="0" FontSize="10" Grid.Column="0" Margin="0,0,66,0" ><Run Foreground="Red" Text="*"/><Run Text=" "/><Run Text="Date of Birth"/></TextBlock>
-
-                        <ComboBox x:Uid="Day" x:Name="DayComboBox" Grid.Column="0" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Margin="0,18,118,0" Grid.RowSpan="2"/>
-                        <ComboBox x:Uid="Month" x:Name="MonthComboBox" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Margin="89,18,131,0" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
-                        <ComboBox x:Uid="Year" x:Name="YearComboBox" Grid.Column="1" VerticalContentAlignment="Center" SelectionChanged="BirthdateComboBox_SelectionChanged" Margin="75,18,10,0" Grid.RowSpan="2"/>
                     </Grid>
 
                     <Grid Grid.Row="6">

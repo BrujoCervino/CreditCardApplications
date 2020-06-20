@@ -71,6 +71,7 @@ namespace FrontEnd
             // Process the applicant's application
             CrudManager.CreateApplication(title, FirstNameTextEntry.Text, MiddleNameTextEntry.Text, SurnameTextEntry.Text, applicantBirthDate, EmailEntry.Text, "07722 222 222", "07722 222 222", 25_000, 1_000);
 
+            // Dependency-inject the credit checker and process the check
             CreditChecker creditChecker = new InternalCreditChecker();
             var approval = creditChecker.PerformCreditCheck(null);
             bool accepted = approval.Approved;
