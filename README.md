@@ -43,8 +43,7 @@ I can receive my credit card
 |1     |Monday - Early Tuesday       |✅|<img src="SprintScreenshots/Sprint1_Board_Start.png" alt="Sprint 1 Start" width="250"/>|<img src="SprintScreenshots/Sprint1_Board_End.png" alt="Sprint 1 End" width="250"/>|
 |2     |Late Tuesday - Early Thursday|✅|<img src="SprintScreenshots/Sprint2_Board_Start.png" alt="Sprint 2 Start" width="250"/>|<img src="SprintScreenshots/Sprint2_Board_End.png" alt="Sprint 2 End" width="250"/>|
 |3     |Late Thursday - Early Friday |✅|<img src="SprintScreenshots/Sprint3_Board_Start.png" alt="Sprint 3 Start" width="250"/>|<img src="SprintScreenshots/Sprint3_Board_End.png" alt="Sprint 3 End" width="250"/>|
-|4     |Late Friday                  |⬜️|<img src="SprintScreenshots/Sprint4_Board_Start.png" alt="Sprint 4 Start" width="250"/>|<img src="SprintScreenshots/Sprint4_Board_End.png" alt="Sprint 4 End" width="250"/>|
-|5     |Weekend                      |⬜️|<img src="SprintScreenshots/Sprint5_Board_Start.png" alt="Sprint 5 Start" width="250"/>|<img src="SprintScreenshots/Sprint5_Board_End.png" alt="Sprint 5 End" width="250"/>|
+|4     |Late Friday - Late Saturday  |⬜️|<img src="SprintScreenshots/Sprint4_Board_Start.png" alt="Sprint 4 Start" width="250"/>|<img src="SprintScreenshots/Sprint4_Board_End.png" alt="Sprint 4 End" width="250"/>|
 
 💳 **Sprint Reviews**
 
@@ -130,6 +129,7 @@ I can receive my credit card
 |CrudOperations|"Business end": Communication between the database and the front-end|
 |FrontEndTests|GUI Tests|
 |CrudOperationsTests| "Business end" Tests|
+|DatabaseBackEndTests| Database EF Types Tests|
 
 ### Class Diagrams
 
