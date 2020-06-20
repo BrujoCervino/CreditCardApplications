@@ -146,7 +146,7 @@ I can receive my credit card
 ♣ *Learned*: I should commit more regularly-- intra-sprint-card commits are not a bad thing: better too many than none and an irretrievably broken project.<br/>
 ♣ *What I'll do differently next time*: I was too ambitious in Sprint 3. I need to set more realistic goals next time - each project is another learning experience.<br/>
 <br/>
-♦ **4: Sat, Jun-20**: Ecstatic that I managed to make the CRUD tests pass; happy I got the other tests to pass; happy I got some refactoring done<br/>
+♦ **4: Sat, Jun-20**: Ecstatic that I managed to make the CRUD tests pass; happy I got the other tests to pass; happy I got some refactoring done; happy I used the Pomodoro technique for unit testing<br/>
 ♣ *Learned*: Marking table rows as 'Pending Delete' is safer than the Remove method; how to make granular unit tests for databases; how to use teardown methods in NUnit to autodestroy any table entries made for tests; shallow vs deep cloning<br/>
 ♣ *What I'll do differently next time*: Make more sprint cards: having fewer sprint cards with multiple objectives makes it difficult to know where to put them at the end of the sprint<br/>
 <br/>
@@ -174,6 +174,7 @@ I can receive my credit card
 ⚙️ Better UX: using the [System.Windows.Controls.Frame](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.frame?view=netcore-3.1) class to keep the app within a single window; blue outlines of text box for textbox in focus; red outlines and tooltips for textboxes with invalid input; submit button changes colour when clickable/unclickable <br/>
 ⚙️ Test the InternalCreditChecker class<br/>
 ⚙️ Allow users to pick for which card to apply: currently users can only apply for the Amex Gold Card<br/>
+⚙️ Finish refactoring, for more legible code files<br/>
 <br/>
 
 ## Code
