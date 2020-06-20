@@ -1,6 +1,7 @@
 using CrudOperations;
 using DatabaseBackEnd;
 using Globals.Enums;
+using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -138,6 +139,47 @@ namespace CrudOperationsTests
         }
 
         [Test(Author = "K McEvaddy")]
+        public void CrudManagerCanDeleteValidEntry1()
+        {
+            // Old
+            int oldCount = CrudManager.RetrieveAllApplications().Count;
+            // Current
+            Applicant applicant = CreateApplication();
+            
+            using(var db = new CreditCardApplicationContext())
+            {
+                db.Update(applicant);
+            }
+            int currentCount = CrudManager.RetrieveAllApplications().Count;
+            //using (var db = new CreditCardApplicationContext())
+            //{
+            //    db.Update(applicant);
+            //}
+            // GET APPLICANT FROM THE DATABASE TO GET ITS KEY THEN DELETE (AVOIDS EXCEPTIONS)
+
+            // using (var db = new CreditCardApplicationContext())
+            // {
+            //     applicant = db.Applicants.First(a => a.Equals(applicant));
+            //
+            //       // ; CrudManager.RetrieveAllApplications().First(a => a.Equals(applicant));
+            // }
+
+            // Final
+
+            CrudManager.DeleteApplication(CreateApplication());
+
+            var finalApplicants = CrudManager.RetrieveAllApplications();
+            int finalCount = finalApplicants.Count;
+            Applicant finalApplicant = null;
+            // Pre-assertions
+            TestDelegate result = () => finalApplicant = finalApplicants.First(a => a.Equals(applicant));
+            Assert.Throws<InvalidOperationException>(result);
+            // Assertions
+            Assert.Less(oldCount, currentCount);
+            Assert.Less(finalCount, currentCount);
+        }
+
+        [Test(Author = "K McEvaddy")]
         public void CrudManagerCanDeleteValidEntry()
         {
             // Old
@@ -145,16 +187,17 @@ namespace CrudOperationsTests
             // Current
             Applicant applicant = CreateApplication();
             int currentCount = CrudManager.RetrieveAllApplications().Count;
-            // GET APPLICANT FROM THE DATABASE TO GET ITS KEY THEN DELETE (AVOIDS EXCEPTIONS)
 
             // Final
+
             CrudManager.DeleteApplication(applicant);
+
             var finalApplicants = CrudManager.RetrieveAllApplications();
             int finalCount = finalApplicants.Count;
             Applicant finalApplicant = null;
             // Pre-assertions
-            TestDelegate result = () => finalApplicant = finalApplicants.First(a => a.Equals(applicant));
-            Assert.Throws<InvalidOperationException>(result);
+            //TestDelegate result = () => finalApplicant = finalApplicants.First(a => a.Equals(applicant));
+            //Assert.Throws<InvalidOperationException>(result);
             // Assertions
             Assert.Less(oldCount, currentCount);
             Assert.Less(finalCount, currentCount);

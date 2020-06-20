@@ -3,6 +3,7 @@ using DatabaseBackEnd;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrudOperations 
 {
@@ -65,15 +66,26 @@ namespace CrudOperations
 
         public static void DeleteApplication(in Applicant applicant) 
         {
+            using (var db = new CreditCardApplicationContext())
+            {
+                db.Entry(applicant).State = EntityState.Deleted;
+                db.SaveChanges();
+            }
+#warning Write a test for this^
+        }
+
+        public static void DeleteApplication2(in Applicant applicant)
+        {
             // Connect to database
             using var db = new CreditCardApplicationContext();
             // Get applicants
             List<Applicant> applicants = db.Applicants.ToList();
-            // Delete applicant
+            // Delete 
             db.Applicants.Remove(applicant);
             db.SaveChanges();
 #warning Write a test for this^
         }
+
     }
 
 }
